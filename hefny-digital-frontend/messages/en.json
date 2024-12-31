@@ -1,0 +1,54 @@
+{
+  "nav": {
+    "services": "Services",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Welcome to Hefny Digital",
+    "description": "We build stunning websites that drive results for your business. Our expert team combines creativity and technology to deliver exceptional digital experiences.",
+    "cta": "Get Started"
+  },
+  "services": {
+    "title": "Our Services",
+    "webDev": {
+      "title": "Web Development",
+      "description": "We create responsive, fast, and user-friendly websites tailored to your needs."
+    },
+    "mobileDev": {
+      "title": "Mobile App Development",
+      "description": "Our team builds native and cross-platform mobile apps for iOS and Android."
+    },
+    "ecommerce": {
+      "title": "E-commerce Solutions",
+      "description": "We develop secure and scalable online stores to boost your sales."
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "project1": "E-commerce Website",
+    "project2": "Mobile App",
+    "project3": "Corporate Website"
+  },
+  "about": {
+    "title": "About Hefny Digital",
+    "content1": "Hefny Digital is a leading web development company dedicated to creating exceptional digital experiences for businesses of all sizes. Our team of skilled developers, designers, and digital strategists work together to deliver innovative solutions that drive results.",
+    "content2": "With years of experience in the industry, we've helped numerous clients achieve their online goals through custom web development, mobile app creation, and e-commerce solutions. We pride ourselves on our attention to detail, commitment to quality, and focus on client satisfaction.",
+    "content3": "At Hefny Digital, we believe in the power of technology to transform businesses. Our mission is to empower our clients with cutting-edge digital solutions that enhance their online presence, streamline their operations, and boost their bottom line."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "name": "Name",
+    "email": "Email",
+    "message": "Message",
+    "send": "Send Message"
+  },
+  "footer": {
+    "description": "Creating exceptional digital experiences for businesses worldwide.",
+    "quickLinks": "Quick Links",
+    "contactUs": "Contact Us",
+    "rights": "All rights reserved."
+  }
+}
+
