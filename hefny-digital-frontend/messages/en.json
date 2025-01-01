@@ -15,15 +15,18 @@
     "learnMore": "Learn More",
     "webDev": {
       "title": "Web Development",
-      "description": "We create responsive, fast, and user-friendly websites tailored to your needs."
+      "description": "We create responsive, fast, and user-friendly websites tailored to your needs.",
+      "detailedDescription": "Our web development service offers end-to-end solutions for businesses of all sizes. We specialize in creating responsive, fast-loading, and user-friendly websites that are tailored to your specific needs. Our team of expert developers uses the latest technologies and best practices to ensure your website not only looks great but also performs exceptionally well. From simple landing pages to complex e-commerce platforms, we have the skills and experience to bring your vision to life. We focus on creating intuitive user interfaces, optimizing for search engines, and ensuring your website is secure and scalable."
     },
     "mobileDev": {
       "title": "Mobile App Development",
-      "description": "Our team builds native and cross-platform mobile apps for iOS and Android."
+      "description": "Our team builds native and cross-platform mobile apps for iOS and Android.",
+      "detailedDescription": "In the mobile-first world, having a strong presence on smartphones is crucial. Our mobile app development service covers both native and cross-platform solutions for iOS and Android. We create apps that are not just functional, but also engaging and user-friendly. Our team of skilled developers and designers work together to create apps that align with your brand and meet your business objectives. We use cutting-edge technologies and frameworks to ensure your app is fast, reliable, and scalable. From concept to launch and beyond, we're with you every step of the way, providing ongoing support and updates to keep your app running smoothly."
     },
-    "ecommerce": {
-      "title": "E-commerce Solutions",
-      "description": "We develop secure and scalable online stores to boost your sales."
+    "endToEnd": {
+      "title": "End-to-End Solutions",
+      "description": "We provide comprehensive solutions from development to ongoing management and support.",
+      "detailedDescription": "Our end-to-end solutions offer a complete package for your digital needs. We don't just build your application; we become your long-term technology partner. Our service begins with understanding your business requirements and designing a tailored solution. We then develop your application using cutting-edge technologies and best practices. But our commitment doesn't end at launch. We provide ongoing management, maintenance, and support to ensure your application continues to evolve with your business needs. This includes regular updates, performance optimization, security patches, and feature enhancements. With our end-to-end solutions, you can focus on your core business while we handle all aspects of your digital infrastructure. From 24/7 monitoring to proactive problem-solving, we ensure your application is always running at its best, allowing you to provide an uninterrupted, high-quality experience to your users."
     }
   },
   "portfolio": {

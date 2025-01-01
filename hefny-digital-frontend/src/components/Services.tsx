@@ -3,16 +3,19 @@
 import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Code, Smartphone, Globe, ArrowRight } from "lucide-react";
+import { Code, Smartphone, Settings, ArrowRight } from "lucide-react";
+import Modal from "./Modal";
 
 const Services = () => {
   const t = useTranslations("services");
   const [hoveredService, setHoveredService] = useState<number | null>(null);
+  const [selectedService, setSelectedService] = useState<number | null>(null);
 
   const services = [
     {
       title: t("webDev.title"),
       description: t("webDev.description"),
+      detailedDescription: t("webDev.detailedDescription"),
       icon: Code,
       color: "bg-blue-100",
       iconColor: "text-blue-600",
@@ -21,15 +24,17 @@ const Services = () => {
     {
       title: t("mobileDev.title"),
       description: t("mobileDev.description"),
+      detailedDescription: t("mobileDev.detailedDescription"),
       icon: Smartphone,
       color: "bg-green-100",
       iconColor: "text-green-600",
       hoverColor: "bg-green-200",
     },
     {
-      title: t("ecommerce.title"),
-      description: t("ecommerce.description"),
-      icon: Globe,
+      title: t("endToEnd.title"),
+      description: t("endToEnd.description"),
+      detailedDescription: t("endToEnd.detailedDescription"),
+      icon: Settings,
       color: "bg-purple-100",
       iconColor: "text-purple-600",
       hoverColor: "bg-purple-200",
@@ -92,7 +97,10 @@ const Services = () => {
                 animate={{ opacity: hoveredService === index ? 1 : 0 }}
                 transition={{ duration: 0.3 }}
               >
-                <button className="bg-white text-gray-800 px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition duration-300 shadow-md">
+                <button
+                  className="bg-white text-gray-800 px-4 py-2 rounded-full font-semibold hover:bg-opacity-90 transition duration-300 shadow-md"
+                  onClick={() => setSelectedService(index)}
+                >
                   {t("learnMore")}
                 </button>
               </motion.div>
@@ -100,6 +108,16 @@ const Services = () => {
           ))}
         </div>
       </div>
+      <Modal
+        isOpen={selectedService !== null}
+        onClose={() => setSelectedService(null)}
+        title={selectedService !== null ? services[selectedService].title : ""}
+        content={
+          selectedService !== null
+            ? services[selectedService].detailedDescription
+            : ""
+        }
+      />
     </section>
   );
 };
