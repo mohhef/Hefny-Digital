@@ -12,6 +12,7 @@
   },
   "services": {
     "title": "Our Services",
+    "learnMore": "Learn More",
     "webDev": {
       "title": "Web Development",
       "description": "We create responsive, fast, and user-friendly websites tailored to your needs."
@@ -27,15 +28,43 @@
   },
   "portfolio": {
     "title": "Our Portfolio",
-    "project1": "E-commerce Website",
-    "project2": "Mobile App",
-    "project3": "Corporate Website"
+    "skillsTitle": "Technologies We Excel In",
+    "examplesTitle": "What We Can Do For You",
+    "comingSoon": "Coming Soon",
+    "description": "We're currently working on exciting projects that showcase our expertise in web development, mobile apps, and e-commerce solutions. Check back soon to see our latest work!",
+    "ctaButton": "Discuss Your Project",
+    "example1": {
+      "title": "E-commerce Platform",
+      "description": "A hypothetical e-commerce solution showcasing our capabilities:",
+      "feature1": "Responsive design for all devices",
+      "feature2": "Secure payment gateway integration",
+      "feature3": "Inventory management system"
+    },
+    "example2": {
+      "title": "Mobile App for Service Booking",
+      "description": "An example of a mobile app we could develop:",
+      "feature1": "User-friendly interface for easy bookings",
+      "feature2": "Real-time availability updates",
+      "feature3": "Push notifications for booking reminders"
+    },
+    "cta": {
+      "title": "Ready to Start Your Project?",
+      "description": "We're excited to bring your ideas to life. Let's discuss your project and create something amazing together.",
+      "button": "Contact Us"
+    }
   },
   "about": {
-    "title": "About Hefny Digital",
-    "content1": "Hefny Digital is a leading web development company dedicated to creating exceptional digital experiences for businesses of all sizes. Our team of skilled developers, designers, and digital strategists work together to deliver innovative solutions that drive results.",
-    "content2": "With years of experience in the industry, we've helped numerous clients achieve their online goals through custom web development, mobile app creation, and e-commerce solutions. We pride ourselves on our attention to detail, commitment to quality, and focus on client satisfaction.",
-    "content3": "At Hefny Digital, we believe in the power of technology to transform businesses. Our mission is to empower our clients with cutting-edge digital solutions that enhance their online presence, streamline their operations, and boost their bottom line."
+    "title": "About Us",
+    "description": "Hefny Digital Solutions was founded by brothers Mohamed and Amr Hefny, combining their expertise in technology and business to deliver cutting-edge digital solutions.",
+    "mohamed": {
+      "role": "Co-Founder & Technical Lead",
+      "bio": "Mohamed Hefny brings extensive expertise to Hefny Digital Solutions. A graduate of Concordia University, Mohamed has worked with industry giants like Morgan Stanley and Amazon, honing his skills in software development and cloud technologies. His experience drives our technical innovation and ensures we deliver top-tier solutions to our clients."
+    },
+    "amr": {
+      "role": "Co-Founder & Business Strategist",
+      "bio": "Amr Hefny complements the technical prowess of Hefny Digital Solutions with his sharp business acumen. His strategic insights and client-focused approach ensure that our solutions not only meet technical requirements but also drive business growth and success for our clients."
+    },
+    "viewLinkedIn": "View LinkedIn Profile"
   },
   "contact": {
     "title": "Contact Us",

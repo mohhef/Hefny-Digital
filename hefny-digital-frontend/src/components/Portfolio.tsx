@@ -1,56 +1,39 @@
 "use client";
 
-import Image from "next/image";
 import { useTranslations } from "next-intl";
+import { motion } from "framer-motion";
+import { Hourglass, Mail } from "lucide-react";
 
 const Portfolio = () => {
   const t = useTranslations("portfolio");
 
-  const projects = [
-    {
-      id: 1,
-      title: t("project1"),
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      id: 2,
-      title: t("project2"),
-      image: "/placeholder.svg?height=300&width=400",
-    },
-    {
-      id: 3,
-      title: t("project3"),
-      image: "/placeholder.svg?height=300&width=400",
-    },
-  ];
-
   return (
-    <section id="portfolio" className="py-20 bg-white">
+    <section id="portfolio" className="py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-extrabold text-gray-900 sm:text-4xl text-center mb-12">
-          {t("title")}
-        </h2>
-        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="bg-gray-100 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition duration-300"
+        <motion.div
+          className="text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <h2 className="text-4xl font-extrabold mb-4 text-gray-800">
+            {t("title")}
+          </h2>
+          <Hourglass className="w-16 h-16 mx-auto text-blue-500 mb-6" />
+          <p className="text-xl text-gray-600 mb-8">{t("comingSoon")}</p>
+          <p className="text-lg text-gray-600 mb-12 max-w-2xl mx-auto">
+            {t("description")}
+          </p>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <a
+              href="#contact"
+              className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-300"
             >
-              <Image
-                src={project.image}
-                alt={project.title}
-                width={400}
-                height={300}
-                className="w-full h-48 object-cover"
-              />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold text-gray-900">
-                  {project.title}
-                </h3>
-              </div>
-            </div>
-          ))}
-        </div>
+              {t("ctaButton")}
+              <Mail className="ml-2 -mr-1 h-5 w-5" />
+            </a>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
