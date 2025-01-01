@@ -30,7 +30,7 @@ const Portfolio = () => {
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-300"
             >
               {t("ctaButton")}
-              <Mail className="ml-2 -mr-1 h-5 w-5" />
+              <Mail className="ml-2 -mr-0 h-5 w-5" />
             </a>
           </motion.div>
         </motion.div>

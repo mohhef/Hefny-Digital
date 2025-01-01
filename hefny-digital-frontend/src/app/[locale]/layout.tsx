@@ -12,18 +12,18 @@ export function generateStaticParams() {
 
 export default async function LocaleLayout({
   children,
-  params: { locale },
+  params,
 }: {
   children: ReactNode;
   params: { locale: string };
 }) {
   let messages;
+  const { locale } = await params;
   try {
     messages = (await import(`../../../messages/${locale}.json`)).default;
   } catch (error) {
     notFound();
   }
-
   return (
     <html lang={locale} dir={locale === "ar" ? "rtl" : "ltr"}>
       <body className={inter.className}>
