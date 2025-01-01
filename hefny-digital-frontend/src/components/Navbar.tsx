@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = ({ locale }: { locale: string }) => {
@@ -38,7 +38,7 @@ const Navbar = ({ locale }: { locale: string }) => {
               </span>
             </Link>
           </div>
-          <div className="hidden md:flex md:items-center md:space-x-6">
+          <div className="hidden md:flex md:items-center md:space-x-2">
             <NavLink href="#services" isScrolled={isScrolled}>
               {t("services")}
             </NavLink>
@@ -98,20 +98,15 @@ const NavLink = ({
 }) => (
   <Link
     href={href}
-    className={`group inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors duration-300
+    className={`inline-flex items-center px-3 py-2 text-sm font-medium transition-colors duration-300 rounded-md
       ${
         isScrolled
-          ? "text-gray-700 hover:text-blue-600"
-          : "text-white hover:text-blue-200"
+          ? "text-gray-700 hover:text-blue-600 hover:bg-gray-100"
+          : "text-white hover:text-blue-200 hover:bg-white/10"
       }
     `}
   >
     {children}
-    <ChevronDown
-      className={`ml-1 h-3 w-3 transition-transform duration-300 group-hover:rotate-180 ${
-        isScrolled ? "text-gray-400" : "text-white"
-      }`}
-    />
   </Link>
 );
 

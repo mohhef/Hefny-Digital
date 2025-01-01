@@ -6,7 +6,7 @@
     "contact": "Contact"
   },
   "hero": {
-    "title": "Welcome to Hefny Digital",
+    "title": "Hefny Digital Solutions",
     "description": "We build stunning websites that drive results for your business. Our expert team combines creativity and technology to deliver exceptional digital experiences.",
     "cta": "Get Started"
   },
@@ -68,6 +68,13 @@
   },
   "contact": {
     "title": "Contact Us",
+    "getInTouch": "Get In Touch With Us",
+    "ourLocation": "Our Location",
+    "address": "We have branches in Canada, Egypt and UAE - Headquarters: Vancouver, BC",
+    "phoneNumber": "Phone Number",
+    "phone": "+1 (514) 5499903",
+    "emailAddress": "mohhef@gmail.com",
+    "sendMessage": "Send Us a Message",
     "name": "Name",
     "email": "Email",
     "message": "Message",

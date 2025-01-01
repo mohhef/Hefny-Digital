@@ -14,14 +14,14 @@ const About = () => {
       role: t("mohamed.role"),
       bio: t("mohamed.bio"),
       linkedin: "https://www.linkedin.com/in/mohamed-hefny-5617b994/",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/personal/mohamed.jpg",
     },
     {
       name: "Amr Hefny",
       role: t("amr.role"),
       bio: t("amr.bio"),
       linkedin: "https://www.linkedin.com/in/amr-hefny00/",
-      image: "/placeholder.svg?height=300&width=300",
+      image: "/personal/amr.jpg",
     },
   ];
 
@@ -50,17 +50,17 @@ const About = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.2 }}
             >
-              <div className="md:flex">
-                <div className="md:flex-shrink-0">
+              <div className="md:flex h-full">
+                <div className="md:w-2/5 relative h-64 md:h-auto">
                   <Image
-                    className="h-48 w-full object-cover md:w-48"
                     src={founder.image}
                     alt={founder.name}
-                    width={300}
-                    height={300}
+                    layout="fill"
+                    objectFit="cover"
+                    className="w-full h-full object-center"
                   />
                 </div>
-                <div className="p-8">
+                <div className="p-8 md:w-3/5">
                   <div className="uppercase tracking-wide text-sm text-blue-500 font-semibold">
                     {founder.role}
                   </div>

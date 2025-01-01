@@ -40,13 +40,13 @@ const Footer = () => {
           </div>
           <div>
             <h3 className="text-lg font-semibold mb-4">{t("contactUs")}</h3>
-            <p className="text-gray-300">Email: info@hefnydigital.com</p>
-            <p className="text-gray-300">Phone: +1 (123) 456-7890</p>
+            <p className="text-gray-300">Email: mohhef@gmail.com</p>
+            <p className="text-gray-300">Phone: +1 (514) 549 9903</p>
           </div>
         </div>
         <div className="mt-8 border-t border-gray-700 pt-8 text-center">
           <p className="text-gray-300">
-            &copy; 2023 Hefny Digital. {t("rights")}
+            &copy; 2025 Hefny Digital. {t("rights")}
           </p>
         </div>
       </div>

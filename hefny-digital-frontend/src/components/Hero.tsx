@@ -7,10 +7,10 @@ import { ChevronDown } from "lucide-react";
 const Hero = () => {
   const t = useTranslations("hero");
 
-  const scrollToContent = () => {
-    const contentElement = document.getElementById("content");
-    if (contentElement) {
-      contentElement.scrollIntoView({ behavior: "smooth" });
+  const scrollToNextSection = () => {
+    const servicesSection = document.getElementById("services");
+    if (servicesSection) {
+      servicesSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -63,7 +63,7 @@ const Hero = () => {
         >
           <button
             className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-50 transition duration-300 transform hover:scale-105"
-            onClick={scrollToContent}
+            onClick={scrollToNextSection}
           >
             {t("cta")}
           </button>
@@ -100,7 +100,7 @@ const Hero = () => {
         className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer"
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 1.5, repeat: Infinity }}
-        onClick={scrollToContent}
+        onClick={scrollToNextSection}
       >
         <ChevronDown className="text-white w-8 h-8" />
       </motion.div>
