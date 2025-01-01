@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = ({ locale }: { locale: string }) => {
@@ -51,6 +52,13 @@ const Navbar = ({ locale }: { locale: string }) => {
             <NavLink href="#contact" isScrolled={isScrolled}>
               {t("contact")}
             </NavLink>
+            <Button
+              variant="outline"
+              asChild
+              className="border-white hover:bg-white hover:text-gray-300"
+            >
+              <Link href={`/${locale}/login`}>Login</Link>
+            </Button>
             <LanguageSwitcher />
           </div>
           <div className="md:hidden flex items-center">
@@ -77,6 +85,13 @@ const Navbar = ({ locale }: { locale: string }) => {
             <MobileNavLink href="#portfolio">{t("portfolio")}</MobileNavLink>
             <MobileNavLink href="#about">{t("about")}</MobileNavLink>
             <MobileNavLink href="#contact">{t("contact")}</MobileNavLink>
+            <Button
+              variant="outline"
+              asChild
+              className="w-full border-white hover:bg-white hover:text-gray-800"
+            >
+              <Link href={`/${locale}/login`}>Login</Link>
+            </Button>
           </div>
           <div className="px-4 py-3 border-t border-gray-200">
             <LanguageSwitcher />
