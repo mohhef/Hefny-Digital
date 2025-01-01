@@ -2,6 +2,7 @@
 
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
+import { Globe } from "lucide-react";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
@@ -15,9 +16,12 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLanguage}
-      className="px-3 py-1 bg-blue-500 text-white rounded hover:bg-blue-600 transition duration-300"
+      className="inline-flex items-center px-2 py-1 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300"
     >
-      {locale === "en" ? "العربية" : "English"}
+      <Globe className="h-4 w-4" />
+      <span className="sr-only">
+        {locale === "en" ? "Switch to Arabic" : "Switch to English"}
+      </span>
     </button>
   );
 }

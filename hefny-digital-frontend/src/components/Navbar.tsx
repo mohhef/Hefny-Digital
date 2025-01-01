@@ -1,65 +1,84 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useTranslations } from "next-intl";
-import { Menu, X } from "lucide-react";
-import Image from "next/image";
+import { Menu, X, ChevronDown } from "lucide-react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const Navbar = () => {
+const Navbar = ({ locale }: { locale: string }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("nav");
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <nav className="bg-white shadow-md">
+    <nav
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+      }`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
-              <Image
-                src="/placeholder.svg?height=40&width=40"
-                alt="Hefny Digital Logo"
-                width={40}
-                height={40}
-                className="mr-2"
-              />
-              <span className="text-xl font-bold text-blue-600">
-                Hefny Digital
+            <Link href={`/${locale}`} className="flex items-center">
+              <span
+                className={`text-xl font-bold ${
+                  isScrolled ? "text-blue-600" : "text-white"
+                } transition-colors duration-300`}
+              >
+                HDS
               </span>
             </Link>
           </div>
-          <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-8">
-            <NavLink href="#services">{t("services")}</NavLink>
-            <NavLink href="#portfolio">{t("portfolio")}</NavLink>
-            <NavLink href="#about">{t("about")}</NavLink>
-            <NavLink href="#contact">{t("contact")}</NavLink>
+          <div className="hidden md:flex md:items-center md:space-x-6">
+            <NavLink href="#services" isScrolled={isScrolled}>
+              {t("services")}
+            </NavLink>
+            <NavLink href="#portfolio" isScrolled={isScrolled}>
+              {t("portfolio")}
+            </NavLink>
+            <NavLink href="#about" isScrolled={isScrolled}>
+              {t("about")}
+            </NavLink>
+            <NavLink href="#contact" isScrolled={isScrolled}>
+              {t("contact")}
+            </NavLink>
             <LanguageSwitcher />
           </div>
-          <div className="sm:hidden flex items-center">
+          <div className="md:hidden flex items-center">
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500"
+              className={`inline-flex items-center justify-center p-2 rounded-md ${
+                isScrolled ? "text-blue-600" : "text-white"
+              } hover:bg-blue-100 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-300`}
             >
               <span className="sr-only">Open main menu</span>
               {isOpen ? (
-                <X className="block h-6 w-6" />
+                <X className="block h-5 w-5" />
               ) : (
-                <Menu className="block h-6 w-6" />
+                <Menu className="block h-5 w-5" />
               )}
             </button>
           </div>
         </div>
       </div>
       {isOpen && (
-        <div className="sm:hidden">
-          <div className="pt-2 pb-3 space-y-1">
+        <div className="md:hidden bg-white">
+          <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             <MobileNavLink href="#services">{t("services")}</MobileNavLink>
             <MobileNavLink href="#portfolio">{t("portfolio")}</MobileNavLink>
             <MobileNavLink href="#about">{t("about")}</MobileNavLink>
             <MobileNavLink href="#contact">{t("contact")}</MobileNavLink>
           </div>
-          <div className="px-4 py-2">
+          <div className="px-4 py-3 border-t border-gray-200">
             <LanguageSwitcher />
           </div>
         </div>
@@ -71,15 +90,28 @@ const Navbar = () => {
 const NavLink = ({
   href,
   children,
+  isScrolled,
 }: {
   href: string;
   children: React.ReactNode;
+  isScrolled: boolean;
 }) => (
   <Link
     href={href}
-    className="inline-flex items-center px-1 pt-1 border-b-2 border-transparent text-sm font-medium text-gray-500 hover:border-gray-300 hover:text-gray-700"
+    className={`group inline-flex items-center px-1 pt-1 text-sm font-medium transition-colors duration-300
+      ${
+        isScrolled
+          ? "text-gray-700 hover:text-blue-600"
+          : "text-white hover:text-blue-200"
+      }
+    `}
   >
     {children}
+    <ChevronDown
+      className={`ml-1 h-3 w-3 transition-transform duration-300 group-hover:rotate-180 ${
+        isScrolled ? "text-gray-400" : "text-white"
+      }`}
+    />
   </Link>
 );
 
@@ -92,7 +124,7 @@ const MobileNavLink = ({
 }) => (
   <Link
     href={href}
-    className="block pl-3 pr-4 py-2 border-l-4 border-transparent text-base font-medium text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
+    className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
   >
     {children}
   </Link>

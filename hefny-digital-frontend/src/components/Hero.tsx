@@ -1,3 +1,5 @@
+"use client";
+
 import Link from "next/link";
 import { useTranslations } from "next-intl";
 
@@ -5,7 +7,7 @@ const Hero = () => {
   const t = useTranslations("hero");
 
   return (
-    <div className="bg-blue-600 text-white">
+    <div className="bg-blue-600 text-white pt-16">
       <div className="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
         <h1 className="text-4xl font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
           {t("title")}

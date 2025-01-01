@@ -45,6 +45,12 @@
     "send": "Send Message"
   },
   "footer": {
+    "nav": {
+      "services": "Services",
+      "portfolio": "Portfolio",
+      "about": "About",
+      "contact": "Contact"
+    },
     "description": "Creating exceptional digital experiences for businesses worldwide.",
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
