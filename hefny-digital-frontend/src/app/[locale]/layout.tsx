@@ -12,14 +12,13 @@ export function generateStaticParams() {
 
 type LayoutProps = {
   children: ReactNode;
-  params: { locale: string };
+  params: Promise<{ locale: string }>;
 };
 
-export default async function LocaleLayout({
-  children,
-  params: { locale },
-}: LayoutProps) {
+export default async function LocaleLayout({ children, params }: LayoutProps) {
   let messages;
+  const resolvedParams = await params;
+  const { locale } = resolvedParams;
 
   try {
     messages = (await import(`../../../messages/${locale}.json`)).default;

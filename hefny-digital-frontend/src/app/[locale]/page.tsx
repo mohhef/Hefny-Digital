@@ -6,8 +6,12 @@ import About from "../../components/About";
 import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
 
-export default function Home({ params }: { params: { locale: string } }) {
-  const { locale } = params; // No need to use `await` here
+export default async function Home({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar locale={locale} />
