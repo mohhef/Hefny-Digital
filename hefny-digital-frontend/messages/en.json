@@ -105,20 +105,28 @@
     "contactUs": "Don't have an account? Contact us"
   },
   "dashboard": {
-    "title": "Client Dashboard",
-    "projectUpdates": {
-      "title": "Project Updates",
-      "description": "View the latest updates on your website project."
+    "welcome": "Welcome back, {name}!",
+    "overview": "Here's an overview of your recent activity and upcoming tasks.",
+    "activeContracts": {
+      "title": "Active Contracts",
+      "subtitle": "{count} new this month"
     },
-    "invoices": {
-      "title": "Invoices",
-      "description": "Access and pay your invoices."
+    "pendingInvoices": {
+      "title": "Pending Invoices",
+      "subtitle": "Total: {amount}"
     },
-    "communication": {
-      "title": "Communication Log",
-      "description": "Review our communication history."
+    "newUpdates": {
+      "title": "New Updates",
+      "subtitle": "Since your last login"
     },
-    "viewDetails": "View details"
+    "title": "Hefny Digital",
+    "logout": "Logout",
+    "nav": {
+      "dashboard": "Dashboard",
+      "contracts": "Contracts",
+      "invoices": "Invoices",
+      "updates": "Updates"
+    }
   }
 }
 

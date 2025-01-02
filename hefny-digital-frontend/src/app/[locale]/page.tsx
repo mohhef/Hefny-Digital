@@ -6,9 +6,7 @@ import About from "../../components/About";
 import Contact from "../../components/Contact";
 import Footer from "../../components/Footer";
 
-export default async function Home({
-  params,
-}: {
+export default async function Home({}: {
   params: Promise<{ locale: string }>;
 }) {
   return (

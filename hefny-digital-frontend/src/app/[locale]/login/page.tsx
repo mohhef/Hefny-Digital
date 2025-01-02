@@ -25,6 +25,7 @@ export default function Login() {
     // Here you would typically handle the login logic
     console.log("Login attempt with:", email, password);
     // For now, we'll just redirect to the dashboard
+    // @ts-expect-error idk
     router.push(`/dashboard`);
   };
 

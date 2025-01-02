@@ -87,19 +87,27 @@
     "contactUs": "ليس لديك حساب؟ اتصل بنا"
   },
   "dashboard": {
-    "title": "لوحة تحكم العميل",
-    "projectUpdates": {
-      "title": "تحديثات المشروع",
-      "description": "عرض آخر التحديثات على مشروع موقعك الإلكتروني."
+    "welcome": "مرحبًا بعودتك، {name}!",
+    "overview": "إليك نظرة عامة على نشاطك الأخير والمهام القادمة.",
+    "activeContracts": {
+      "title": "العقود النشطة",
+      "subtitle": "{count} جديد هذا الشهر"
     },
-    "invoices": {
-      "title": "الفواتير",
-      "description": "الوصول إلى فواتيرك ودفعها."
+    "pendingInvoices": {
+      "title": "الفواتير المعلقة",
+      "subtitle": "المجموع: {amount}"
     },
-    "communication": {
-      "title": "سجل التواصل",
-      "description": "مراجعة سجل تواصلنا."
+    "newUpdates": {
+      "title": "التحديثات الجديدة",
+      "subtitle": "منذ آخر تسجيل دخول لك"
     },
-    "viewDetails": "عرض التفاصيل"
+    "title": "هيفني ديجيتال",
+    "logout": "تسجيل الخروج",
+    "nav": {
+      "dashboard": "لوحة التحكم",
+      "contracts": "العقود",
+      "invoices": "الفواتير",
+      "updates": "التحديثات"
+    }
   }
 }
