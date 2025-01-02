@@ -57,7 +57,7 @@ const Navbar = ({ locale }: { locale: string }) => {
               asChild
               className="border-white hover:bg-white hover:text-gray-300"
             >
-              <Link href={"/login"}>Login</Link>
+              <Link href={"/login"}>{t("login")}</Link>
             </Button>
             <LanguageSwitcher />
           </div>

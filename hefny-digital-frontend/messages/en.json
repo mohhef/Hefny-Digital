@@ -1,5 +1,6 @@
 {
   "nav": {
+    "login": "Login",
     "services": "Services",
     "portfolio": "Portfolio",
     "about": "About",
