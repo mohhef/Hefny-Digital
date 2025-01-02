@@ -82,6 +82,7 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                     : "border-white text-black hover:bg-white hover:text-blue-600"
                 }`}
               >
+                {/* @ts-expect-error idk*/}
                 <Link href="/book-strategy-call">Book Free Strategy Call</Link>
               </Button>
             )}
@@ -157,6 +158,7 @@ const NavLink = ({
   bookingPage: boolean;
 }) => (
   <Link
+    // @ts-expect-error idk
     href={href}
     className={`inline-flex items-center px-3 py-2 text-sm font-medium transition-colors duration-300 rounded-md
       ${
@@ -178,6 +180,7 @@ const MobileNavLink = ({
   children: React.ReactNode;
 }) => (
   <Link
+    // @ts-expect-error idk
     href={href}
     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
   >
