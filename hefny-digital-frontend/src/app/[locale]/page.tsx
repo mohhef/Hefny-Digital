@@ -11,10 +11,9 @@ export default async function Home({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar locale={locale} />
+      <Navbar />
       <main>
         <Hero />
         <Services />

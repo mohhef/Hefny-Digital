@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const Navbar = ({ locale }: { locale: string }) => {
+const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("nav");
@@ -90,7 +90,7 @@ const Navbar = ({ locale }: { locale: string }) => {
               asChild
               className="w-full border-white hover:bg-white hover:text-gray-800"
             >
-              <Link href={`/${locale}/login`}>Login</Link>
+              <Link href="/login">Login</Link>
             </Button>
           </div>
           <div className="px-4 py-3 border-t border-gray-200">
