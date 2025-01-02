@@ -72,6 +72,19 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 </NavLink>
               </div>
             )}
+            {!bookingPage && (
+              <Button
+                variant="outline"
+                asChild
+                className={`border-2 ${
+                  isScrolled || bookingPage
+                    ? "border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+                    : "border-white text-black hover:bg-white hover:text-blue-600"
+                }`}
+              >
+                <Link href="/book-strategy-call">Book Free Strategy Call</Link>
+              </Button>
+            )}
             <Button
               variant="outline"
               asChild
