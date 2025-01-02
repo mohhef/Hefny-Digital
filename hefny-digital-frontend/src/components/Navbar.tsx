@@ -40,34 +40,38 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-2">
-            <NavLink
-              href="#services"
-              isScrolled={isScrolled}
-              bookingPage={bookingPage}
-            >
-              {t("services")}
-            </NavLink>
-            <NavLink
-              href="#portfolio"
-              isScrolled={isScrolled}
-              bookingPage={bookingPage}
-            >
-              {t("portfolio")}
-            </NavLink>
-            <NavLink
-              href="#about"
-              isScrolled={isScrolled}
-              bookingPage={bookingPage}
-            >
-              {t("about")}
-            </NavLink>
-            <NavLink
-              href="#contact"
-              isScrolled={isScrolled}
-              bookingPage={bookingPage}
-            >
-              {t("contact")}
-            </NavLink>
+            {!bookingPage && (
+              <div>
+                <NavLink
+                  href="#services"
+                  isScrolled={isScrolled}
+                  bookingPage={bookingPage}
+                >
+                  {t("services")}
+                </NavLink>
+                <NavLink
+                  href="#portfolio"
+                  isScrolled={isScrolled}
+                  bookingPage={bookingPage}
+                >
+                  {t("portfolio")}
+                </NavLink>
+                <NavLink
+                  href="#about"
+                  isScrolled={isScrolled}
+                  bookingPage={bookingPage}
+                >
+                  {t("about")}
+                </NavLink>
+                <NavLink
+                  href="#contact"
+                  isScrolled={isScrolled}
+                  bookingPage={bookingPage}
+                >
+                  {t("contact")}
+                </NavLink>
+              </div>
+            )}
             <Button
               variant="outline"
               asChild
@@ -76,7 +80,7 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
               {/* @ts-expect-error idk */}
               <Link href={"/login"}>{t("login")}</Link>
             </Button>
-            <LanguageSwitcher />
+            {!bookingPage && <LanguageSwitcher />}
           </div>
           <div className="md:hidden flex items-center">
             <button
@@ -98,21 +102,30 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
       {isOpen && (
         <div className="md:hidden bg-white">
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-            <MobileNavLink href="#services">{t("services")}</MobileNavLink>
-            <MobileNavLink href="#portfolio">{t("portfolio")}</MobileNavLink>
-            <MobileNavLink href="#about">{t("about")}</MobileNavLink>
-            <MobileNavLink href="#contact">{t("contact")}</MobileNavLink>
+            {!bookingPage && (
+              <div>
+                <MobileNavLink href="#services">{t("services")}</MobileNavLink>
+                <MobileNavLink href="#portfolio">
+                  {t("portfolio")}
+                </MobileNavLink>
+                <MobileNavLink href="#about">{t("about")}</MobileNavLink>
+                <MobileNavLink href="#contact">{t("contact")}</MobileNavLink>
+              </div>
+            )}
             <Button
               variant="outline"
               asChild
-              className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
+              className="w-full border-white hover:bg-white hover:text-gray-800"
             >
-              <Link href="/book-strategy-call">Book Free Strategy Call</Link>
+              {/* @ts-expect-error idk */}
+              <Link href="/login">Login</Link>
             </Button>
           </div>
-          <div className="px-4 py-3 border-t border-gray-200">
-            <LanguageSwitcher />
-          </div>
+          {!bookingPage && (
+            <div className="px-4 py-3 border-t border-gray-200">
+              <LanguageSwitcher />
+            </div>
+          )}
         </div>
       )}
     </nav>
