@@ -76,5 +76,29 @@
       "about": "من نحن",
       "contact": "تواصل معنا"
     }
+  },
+  "login": {
+    "title": "تسجيل الدخول إلى حسابك",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "forgotPassword": "نسيت كلمة المرور؟",
+    "loginButton": "تسجيل الدخول",
+    "contactUs": "ليس لديك حساب؟ اتصل بنا"
+  },
+  "dashboard": {
+    "title": "لوحة تحكم العميل",
+    "projectUpdates": {
+      "title": "تحديثات المشروع",
+      "description": "عرض آخر التحديثات على مشروع موقعك الإلكتروني."
+    },
+    "invoices": {
+      "title": "الفواتير",
+      "description": "الوصول إلى فواتيرك ودفعها."
+    },
+    "communication": {
+      "title": "سجل التواصل",
+      "description": "مراجعة سجل تواصلنا."
+    },
+    "viewDetails": "عرض التفاصيل"
   }
 }

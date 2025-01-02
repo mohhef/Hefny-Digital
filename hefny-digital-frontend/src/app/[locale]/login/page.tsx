@@ -11,33 +11,33 @@ import {
   CardContent,
   CardFooter,
 } from "@/components/ui/card";
+import { useTranslations } from "next-intl";
 
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const router = useRouter();
+  const t = useTranslations("login");
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     // Here you would typically handle the login logic
     console.log("Login attempt with:", email, password);
     // For now, we'll just redirect to the dashboard
-    router.push("/dashboard");
+    router.push(`/dashboard`);
   };
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-white flex items-center justify-center">
       <Card className="w-full max-w-md">
         <CardHeader>
-          <CardTitle className="text-2xl text-center">
-            Login to Hefny Digital
-          </CardTitle>
+          <CardTitle className="text-2xl text-center">{t("title")}</CardTitle>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
               <label htmlFor="email" className="text-sm font-medium">
-                Email
+                {t("email")}
               </label>
               <Input
                 id="email"
@@ -50,7 +50,7 @@ export default function Login() {
             </div>
             <div className="space-y-2">
               <label htmlFor="password" className="text-sm font-medium">
-                Password
+                {t("password")}
               </label>
               <Input
                 id="password"
@@ -61,14 +61,12 @@ export default function Login() {
               />
             </div>
             <Button type="submit" className="w-full">
-              Login
+              {t("loginButton")}
             </Button>
           </form>
         </CardContent>
         <CardFooter className="justify-center">
-          <p className="text-sm text-gray-600">
-            Don't have an account? Contact us
-          </p>
+          <p className="text-sm text-gray-600">{t("contactUs")}</p>
         </CardFooter>
       </Card>
     </div>

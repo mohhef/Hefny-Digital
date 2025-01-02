@@ -94,6 +94,30 @@
     "quickLinks": "Quick Links",
     "contactUs": "Contact Us",
     "rights": "All rights reserved."
+  },
+  "login": {
+    "title": "Login to Your Account",
+    "email": "Email",
+    "password": "Password",
+    "forgotPassword": "Forgot password?",
+    "loginButton": "Login",
+    "contactUs": "Don't have an account? Contact us"
+  },
+  "dashboard": {
+    "title": "Client Dashboard",
+    "projectUpdates": {
+      "title": "Project Updates",
+      "description": "View the latest updates on your website project."
+    },
+    "invoices": {
+      "title": "Invoices",
+      "description": "Access and pay your invoices."
+    },
+    "communication": {
+      "title": "Communication Log",
+      "description": "Review our communication history."
+    },
+    "viewDetails": "View details"
   }
 }
 

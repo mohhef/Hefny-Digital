@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { useTranslations } from "next-intl";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -29,7 +29,7 @@ const Navbar = ({ locale }: { locale: string }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link href={`/${locale}`} className="flex items-center">
+            <Link href={"/"} className="flex items-center">
               <span
                 className={`text-xl font-bold ${
                   isScrolled ? "text-blue-600" : "text-white"
@@ -57,7 +57,7 @@ const Navbar = ({ locale }: { locale: string }) => {
               asChild
               className="border-white hover:bg-white hover:text-gray-300"
             >
-              <Link href={`/${locale}/login`}>Login</Link>
+              <Link href={"/login"}>Login</Link>
             </Button>
             <LanguageSwitcher />
           </div>
