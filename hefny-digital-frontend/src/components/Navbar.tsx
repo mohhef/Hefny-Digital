@@ -7,7 +7,7 @@ import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-const Navbar = () => {
+const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("nav");
@@ -23,17 +23,16 @@ const Navbar = () => {
   return (
     <nav
       className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white shadow-md" : "bg-transparent"
+        isScrolled || bookingPage ? "bg-white shadow-md" : "bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            {/* @ts-expect-error idk */}
-            <Link href={""} className="flex items-center">
+            <Link href="/" className="flex items-center">
               <span
                 className={`text-xl font-bold ${
-                  isScrolled ? "text-blue-600" : "text-white"
+                  isScrolled || bookingPage ? "text-blue-600" : "text-white"
                 } transition-colors duration-300`}
               >
                 HDS
@@ -41,16 +40,32 @@ const Navbar = () => {
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-2">
-            <NavLink href="#services" isScrolled={isScrolled}>
+            <NavLink
+              href="#services"
+              isScrolled={isScrolled}
+              bookingPage={bookingPage}
+            >
               {t("services")}
             </NavLink>
-            <NavLink href="#portfolio" isScrolled={isScrolled}>
+            <NavLink
+              href="#portfolio"
+              isScrolled={isScrolled}
+              bookingPage={bookingPage}
+            >
               {t("portfolio")}
             </NavLink>
-            <NavLink href="#about" isScrolled={isScrolled}>
+            <NavLink
+              href="#about"
+              isScrolled={isScrolled}
+              bookingPage={bookingPage}
+            >
               {t("about")}
             </NavLink>
-            <NavLink href="#contact" isScrolled={isScrolled}>
+            <NavLink
+              href="#contact"
+              isScrolled={isScrolled}
+              bookingPage={bookingPage}
+            >
               {t("contact")}
             </NavLink>
             <Button
@@ -67,7 +82,7 @@ const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className={`inline-flex items-center justify-center p-2 rounded-md ${
-                isScrolled ? "text-blue-600" : "text-white"
+                isScrolled || bookingPage ? "text-blue-600" : "text-white"
               } hover:bg-blue-100 hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500 transition-colors duration-300`}
             >
               <span className="sr-only">Open main menu</span>
@@ -90,10 +105,9 @@ const Navbar = () => {
             <Button
               variant="outline"
               asChild
-              className="w-full border-white hover:bg-white hover:text-gray-800"
+              className="w-full border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white"
             >
-              {/* @ts-expect-error idk */}
-              <Link href="/login">Login</Link>
+              <Link href="/book-strategy-call">Book Free Strategy Call</Link>
             </Button>
           </div>
           <div className="px-4 py-3 border-t border-gray-200">
@@ -109,17 +123,18 @@ const NavLink = ({
   href,
   children,
   isScrolled,
+  bookingPage,
 }: {
   href: string;
   children: React.ReactNode;
   isScrolled: boolean;
+  bookingPage: boolean;
 }) => (
   <Link
-    // @ts-expect-error idk
     href={href}
     className={`inline-flex items-center px-3 py-2 text-sm font-medium transition-colors duration-300 rounded-md
       ${
-        isScrolled
+        isScrolled || bookingPage
           ? "text-gray-700 hover:text-blue-600 hover:bg-gray-100"
           : "text-white hover:text-blue-200 hover:bg-white/10"
       }
@@ -137,7 +152,6 @@ const MobileNavLink = ({
   children: React.ReactNode;
 }) => (
   <Link
-    // @ts-expect-error idk
     href={href}
     className="block px-3 py-2 rounded-md text-base font-medium text-gray-700 hover:text-blue-600 hover:bg-blue-50 transition-colors duration-300"
   >
