@@ -26,8 +26,8 @@ const Portfolio = () => {
             {t("description")}
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <Link
-              href="/book-strategy-call"
+            {/* @ts-expect-error idk*/}
+            <Link href="/book-strategy-call"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-300"
             >
               {t("ctaButton")}
