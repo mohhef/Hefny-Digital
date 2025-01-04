@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { Link } from "@/i18n/routing";
-import { useTranslations } from "next-intl";
-import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/routing";
+import { Menu, X } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useEffect, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {

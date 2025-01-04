@@ -1,9 +1,9 @@
 "use client";
 
-import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { Hourglass, Mail } from "lucide-react";
-import { Link } from "@/i18n/routing";
+import { useTranslations } from "next-intl";
 
 const Portfolio = () => {
   const t = useTranslations("portfolio");

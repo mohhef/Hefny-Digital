@@ -1,15 +1,8 @@
 "use client";
 
-import { useState } from "react";
-import { InlineWidget } from "react-calendly";
-import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
-import { Label } from "@/components/ui/label";
-import { ArrowRight, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
+import { AnimatePresence, motion } from "framer-motion";
+import { InlineWidget } from "react-calendly";
 
 export default function ScheduleMeeting() {
   const fadeIn = {
