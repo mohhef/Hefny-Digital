@@ -12,18 +12,6 @@ import { ArrowRight, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 
 export default function ScheduleMeeting() {
-  const [service, setService] = useState("");
-  const [email, setEmail] = useState("");
-  const [phone, setPhone] = useState("");
-  const [description, setDescription] = useState("");
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    // Here you would typically send this data to your backend
-    console.log({ service, email, phone, description });
-    alert("Meeting scheduled successfully!");
-  };
-
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
