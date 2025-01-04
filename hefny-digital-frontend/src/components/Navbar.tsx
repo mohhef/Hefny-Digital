@@ -22,14 +22,18 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
 
   return (
     <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        isScrolled || bookingPage ? "bg-white shadow-md" : "bg-transparent"
+      className={`${
+        bookingPage
+          ? "w-full z-50 transition-all duration-300 "
+          : isScrolled
+          ? "fixed w-full z-50 transition-all duration-300 bg-white shadow-md"
+          : "fixed w-full z-50 transition-all duration-30 bg-transparent"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link href="/" className="flex items-center">
+            <Link href={"/home"} className="flex items-center">
               <span
                 className={`text-xl font-bold ${
                   isScrolled || bookingPage ? "text-blue-600" : "text-white"
@@ -83,7 +87,7 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 }`}
               >
                 {/* @ts-expect-error idk*/}
-                <Link href="/book-strategy-call">Book Free Strategy Call</Link>
+                <Link href="/book-strategy-call">{t("bookFreeCall")}</Link>
               </Button>
             )}
             <Button

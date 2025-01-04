@@ -3,6 +3,7 @@
 import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Hourglass, Mail } from "lucide-react";
+import { Link } from "@/i18n/routing";
 
 const Portfolio = () => {
   const t = useTranslations("portfolio");
@@ -25,13 +26,13 @@ const Portfolio = () => {
             {t("description")}
           </p>
           <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-            <a
-              href="#contact"
+            <Link
+              href="/book-strategy-call"
               className="inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-md text-white bg-blue-600 hover:bg-blue-700 transition duration-300"
             >
               {t("ctaButton")}
               <Mail className="ml-2 -mr-0 h-5 w-5" />
-            </a>
+            </Link>
           </motion.div>
         </motion.div>
       </div>

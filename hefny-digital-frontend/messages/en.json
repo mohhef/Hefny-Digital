@@ -4,7 +4,8 @@
     "services": "Services",
     "portfolio": "Portfolio",
     "about": "About",
-    "contact": "Contact"
+    "contact": "Contact",
+    "bookFreeCall": "Book Free Strategy Call"
   },
   "hero": {
     "title": "Hefny Digital Solutions",
@@ -127,6 +128,43 @@
       "invoices": "Invoices",
       "updates": "Updates"
     }
+  },
+  "bookStrategyCall": {
+    "title": "Book a Free Strategy Call",
+    "subtitle": "Get expert insights from our founding team to boost your digital presence",
+    "meetFounders": "Meet Our Founding Team",
+    "scheduleCall": "Schedule Your Free Strategy Call",
+    "callDescription": "Select an available date to book your free strategy call with Mohamed and Amr Hefny. Our founding team is excited to help you grow your business!"
+  },
+  "founderProfile": {
+    "mohamed": {
+      "name": "Mohamed Hefny",
+      "role": "Co-Founder & Business Strategist",
+      "description": "Expert in scaling businesses through digital exposure. Former Amazon and Morgan Stanley employee.",
+      "expertise": [
+        "Business Scaling",
+        "Digital Marketing",
+        "Corporate Strategy",
+        "Tech Industry Insights"
+      ]
+    },
+    "amr": {
+      "name": "Amr Hefny",
+      "role": "Co-Founder & Technical Lead",
+      "description": "Experienced full-stack developer and freelancer. Specializes in small to medium-sized business solutions.",
+      "expertise": [
+        "Full-Stack Development",
+        "Business Sales Strategies",
+        "Digital Exposure Tactics",
+        "Custom Software Solutions"
+      ]
+    },
+    "expertiseTitle": "Areas of Expertise:"
+  },
+  "bookingCalendar": {
+    "selectedDate": "Selected date:",
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
   }
 }
 

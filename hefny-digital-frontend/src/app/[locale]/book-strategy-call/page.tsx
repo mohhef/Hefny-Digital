@@ -1,65 +1,74 @@
-import { Calendar, Users } from "lucide-react";
-import FounderProfile from "../../../components/FounderProfile";
-import BookingCalendar from "../../../components/BookingCalendar";
+"use client";
+
+import { useState } from "react";
+import { InlineWidget } from "react-calendly";
+import { motion, AnimatePresence } from "framer-motion";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Label } from "@/components/ui/label";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 import Navbar from "@/components/Navbar";
 
-export default function BookStrategyCallPage() {
+export default function ScheduleMeeting() {
+  const [service, setService] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [description, setDescription] = useState("");
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    // Here you would typically send this data to your backend
+    console.log({ service, email, phone, description });
+    alert("Meeting scheduled successfully!");
+  };
+
+  const fadeIn = {
+    hidden: { opacity: 0, y: 20 },
+    visible: { opacity: 1, y: 0 },
+    exit: { opacity: 0, y: -20 },
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div>
       <Navbar bookingPage={true} />
-      <main className="container mx-auto px-4 py-24">
-        <h1 className="text-4xl font-bold text-center mb-4">
-          Book a Free Strategy Call
-        </h1>
-        <p className="text-xl text-center mb-8 text-gray-600">
-          Get expert insights from our founding team to boost your digital
-          presence
-        </p>
+      <div className="container mx-auto p-4 max-w-5xl">
+        <motion.h1
+          className="text-4xl font-bold mb-8 text-center text-primary"
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+        >
+          Schedule Your Free Consultation
+        </motion.h1>
 
-        <div className="bg-blue-50 p-6 rounded-lg mb-12">
-          <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-700">
-            <Users className="mr-2" />
-            Meet Our Founding Team
-          </h2>
-          <div className="grid md:grid-cols-2 gap-8">
-            <FounderProfile
-              name="Mohamed Hefny"
-              role="Co-Founder & Business Strategist"
-              description="Expert in scaling businesses through digital exposure. Former Amazon and Morgan Stanley employee."
-              expertise={[
-                "Business Scaling",
-                "Digital Marketing",
-                "Corporate Strategy",
-                "Tech Industry Insights",
-              ]}
-            />
-            <FounderProfile
-              name="Amr Hefny"
-              role="Co-Founder & Technical Lead"
-              description="Experienced full-stack developer and freelancer. Specializes in small to medium-sized business solutions."
-              expertise={[
-                "Full-Stack Development",
-                "Business Sales Strategies",
-                "Digital Exposure Tactics",
-                "Custom Software Solutions",
-              ]}
-            />
-          </div>
-        </div>
-
-        <div className="bg-white p-6 rounded-lg shadow-lg border border-gray-200">
-          <h2 className="text-2xl font-semibold mb-4 flex items-center text-blue-700">
-            <Calendar className="mr-2" />
-            Schedule Your Free Strategy Call
-          </h2>
-          <p className="mb-6 text-gray-600">
-            Select an available date to book your free strategy call with
-            Mohamed and Amr Hefny. Our founding team is excited to help you grow
-            your business!
-          </p>
-          <BookingCalendar />
-        </div>
-      </main>
+        <motion.div
+          className="bg-white shadow-xl rounded-lg p-6"
+          initial="hidden"
+          animate="visible"
+          variants={fadeIn}
+        >
+          <AnimatePresence mode="wait">
+            <motion.div
+              key="step2"
+              initial="hidden"
+              animate="visible"
+              exit="exit"
+              variants={fadeIn}
+              className="space-y-6"
+            >
+              <h2 className="text-2xl font-semibold mb-4">
+                Select a Date and Time
+              </h2>
+              <InlineWidget
+                url="https://calendly.com/mohhef"
+                styles={{ height: "950px" }}
+              />
+            </motion.div>
+          </AnimatePresence>
+        </motion.div>
+      </div>
     </div>
   );
 }
