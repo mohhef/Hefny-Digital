@@ -29,12 +29,11 @@ export default function LanguageSwitcher() {
       className={`
         inline-flex items-center gap-2 px-3 py-2 
         text-sm font-medium rounded-full shadow-sm 
-        transition-all duration-300 ease-in-out
-        focus:outline-none focus:ring-2 focus:ring-offset-2
+        focus:outline-none focus:ring-2
         ${
           isScrolled
             ? "text-black bg-primary hover:bg-primary-dark focus:ring-gray-500"
-            : "text-white bg-primary hover:bg-primary-dark focus:ring-primary"
+            : "text-black  bg-primary hover:bg-primary-dark focus:ring-primary sm:text-white"
         }
         border
       `}
