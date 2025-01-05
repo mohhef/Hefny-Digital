@@ -11,3 +11,22 @@ body {
     --radius: 0.5rem;
   }
 }
+
+@keyframes pulseError {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.2;
+    transform: scale(1.05);
+  }
+}
+
+.error-text {
+  @apply text-red-500 font-semibold;
+}
+
+.highlight-error-text {
+  animation: pulseError 0.2s ease-in-out 2;
+}

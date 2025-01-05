@@ -32,13 +32,25 @@ export default function Login() {
       router.push("/dashboard");
     } else {
       setError(t("invalidCredentials"));
+      highlightError();
+    }
+  };
+
+  const highlightError = () => {
+    const errorText = document.querySelector(".error-text");
+    console.log(errorText?.classList);
+    if (errorText) {
+      errorText.classList.add("highlight-error-text");
+      setTimeout(() => {
+        errorText.classList.remove("highlight-error-text");
+      }, 1000);
     }
   };
 
   return (
     <div>
       <Navbar bookingPage={true} />
-      <Card className="container mx-auto p-4 max-w-2xl">
+      <Card className="container mx-auto max-w-2xl">
         <CardHeader>
           <CardTitle className="text-2xl text-center">{t("title")}</CardTitle>
         </CardHeader>
@@ -47,10 +59,13 @@ export default function Login() {
             {error && (
               <Alert variant="destructive">
                 <AlertDescription>
-                  {error} {/* @ts-expect-error idk */}
-                  <Link href="/#contact" className="underline font-medium">
-                    {t("contactSupport")}
-                  </Link>
+                  <span className="error-text font-medium">
+                    {error}
+                    {/* @ts-expect-error idk */}
+                    <Link href="/#contact" className="underline font-medium">
+                      {t("contactSupport")}
+                    </Link>
+                  </span>
                 </AlertDescription>
               </Alert>
             )}
