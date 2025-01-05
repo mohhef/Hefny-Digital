@@ -103,7 +103,9 @@
     "password": "Password",
     "forgotPassword": "Forgot password?",
     "loginButton": "Login",
-    "contactUs": "Don't have an account? Contact us"
+    "contactUs": "Don't have an account? Contact us",
+    "invalidCredentials": "Invalid credentials. The email or password you entered is incorrect. If you encounter any technical difficulties, please ",
+    "contactSupport": "contact support."
   },
   "dashboard": {
     "welcome": "Welcome back, {name}!",
