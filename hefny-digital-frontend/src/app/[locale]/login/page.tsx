@@ -99,6 +99,7 @@ export default function Login() {
           </form>
         </CardContent>
         <CardFooter className="justify-center">
+          {/* @ts-expect-error idk */}
           <Link href="/#contact" className="text-sm text-gray-600">
             {t("contactUs")}
           </Link>
