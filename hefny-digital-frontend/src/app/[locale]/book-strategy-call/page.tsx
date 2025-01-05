@@ -2,9 +2,12 @@
 
 import Navbar from "@/components/Navbar";
 import { AnimatePresence, motion } from "framer-motion";
+import { useTranslations } from "next-intl";
 import { InlineWidget } from "react-calendly";
 
 export default function ScheduleMeeting() {
+  const t = useTranslations("bookingCalendar");
+
   const fadeIn = {
     hidden: { opacity: 0, y: 20 },
     visible: { opacity: 1, y: 0 },
@@ -21,7 +24,7 @@ export default function ScheduleMeeting() {
           animate="visible"
           variants={fadeIn}
         >
-          Schedule Your Free Consultation
+          {t("scheduleFreeConsultation")}
         </motion.h1>
 
         <motion.div
@@ -40,7 +43,7 @@ export default function ScheduleMeeting() {
               className="space-y-6"
             >
               <h2 className="text-2xl font-semibold mb-4">
-                Select a Date and Time
+                {t("selectDateAndTime")}
               </h2>
               <InlineWidget
                 url="https://calendly.com/mohhef"

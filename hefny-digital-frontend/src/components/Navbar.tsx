@@ -23,7 +23,9 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
   return (
     <nav
       className={`${
-        bookingPage
+        isOpen
+          ? "fixed w-full z-50 bg-white shadow-md"
+          : bookingPage
           ? "w-full z-50 transition-all duration-300 "
           : isScrolled
           ? "fixed w-full z-50 transition-all duration-300 bg-white shadow-md"
@@ -130,13 +132,22 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 <MobileNavLink href="#contact">{t("contact")}</MobileNavLink>
               </div>
             )}
+            {!bookingPage && (
+              <Button
+                asChild
+                className={`border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white`}
+              >
+                <MobileNavLink href="/book-strategy-call">
+                  {t("bookFreeCall")}
+                </MobileNavLink>
+              </Button>
+            )}
             <Button
               variant="outline"
               asChild
               className="w-full border-white hover:bg-white hover:text-gray-800"
             >
-              {/* @ts-expect-error idk */}
-              <Link href="/login">Login</Link>
+              <MobileNavLink href="/login">Login</MobileNavLink>
             </Button>
           </div>
           {!bookingPage && (

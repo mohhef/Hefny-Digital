@@ -162,9 +162,8 @@
     "expertiseTitle": "Areas of Expertise:"
   },
   "bookingCalendar": {
-    "selectedDate": "Selected date:",
-    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
-    "weekdays": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+    "scheduleFreeConsultation": "Schedule Your Free Consultation",
+    "selectDateAndTime": "Select a Date and Time"
   }
 }
 
