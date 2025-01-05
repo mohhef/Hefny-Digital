@@ -1,26 +1,48 @@
 "use client";
 
+import { Globe2 } from "lucide-react";
 import { useLocale } from "next-intl";
 import { useRouter } from "next/navigation";
-import { Globe } from "lucide-react";
+import { useEffect, useState } from "react";
 
 export default function LanguageSwitcher() {
   const locale = useLocale();
   const router = useRouter();
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const toggleLanguage = () => {
     const newLocale = locale === "en" ? "ar" : "en";
     router.push(`/${newLocale}`);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <button
       onClick={toggleLanguage}
-      className="inline-flex items-center px-2 py-1 border border-transparent text-sm font-medium rounded-full shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors duration-300"
+      className={`
+        inline-flex items-center gap-2 px-3 py-2 
+        text-sm font-medium rounded-full shadow-sm 
+        transition-all duration-300 ease-in-out
+        focus:outline-none focus:ring-2 focus:ring-offset-2
+        ${
+          isScrolled
+            ? "text-black bg-primary hover:bg-primary-dark focus:ring-gray-500"
+            : "text-white bg-primary hover:bg-primary-dark focus:ring-primary"
+        }
+        border
+      `}
+      aria-label={locale === "en" ? "Switch to Arabic" : "Switch to English"}
     >
-      <Globe className="h-4 w-4" />
-      <span className="sr-only">
-        {locale === "en" ? "Switch to Arabic" : "Switch to English"}
+      <Globe2 className="h-4 w-4" />
+      <span className="font-semibold tracking-wide">
+        {locale === "en" ? "AR" : "EN"}
       </span>
     </button>
   );
