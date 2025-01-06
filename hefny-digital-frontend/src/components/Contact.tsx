@@ -1,9 +1,11 @@
 "use client";
 
+import { sendEmail } from "@/app/actions/sendEmail";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/components/ui/use-toast";
 import { Linkedin, Mail, MapPin, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
@@ -20,10 +22,31 @@ export default function Contact() {
     company: "",
     message: "",
   });
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData(event.currentTarget);
+    const result = await sendEmail(formData);
+
+    setIsSubmitting(false);
+
+    if (result.success) {
+      toast({
+        title: "Success",
+        description: "Your message has been sent successfully.",
+      });
+      event.currentTarget.reset();
+    } else {
+      toast({
+        title: "Error",
+        description: "Failed to send your message. Please try again later.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (
@@ -176,8 +199,9 @@ export default function Contact() {
             <Button
               type="submit"
               className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 text-lg"
+              disabled={isSubmitting}
             >
-              {t("submit")}
+              {isSubmitting ? t("sending") : t("submit")}
             </Button>
           </form>
         </div>
