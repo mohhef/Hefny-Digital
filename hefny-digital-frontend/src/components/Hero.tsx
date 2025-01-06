@@ -1,9 +1,9 @@
 "use client";
-import Image from "next/image";
-import { useTranslations } from "next-intl";
+import { Link } from "@/i18n/routing";
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-
+import { useTranslations } from "next-intl";
+import Image from "next/image";
 const Hero = () => {
   const t = useTranslations("hero");
 
@@ -62,11 +62,9 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <button
-              className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-50 transition duration-300 transform hover:scale-105"
-              onClick={scrollToNextSection}
-            >
-              {t("cta")}
+            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-50 transition duration-300 transform hover:scale-105">
+              {/* @ts-expect-error idk*/}
+              <Link href="/book-strategy-call">{t("cta")}</Link>
             </button>
           </motion.div>
         </div>
