@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Button } from "@/components/ui/button";
@@ -48,63 +49,66 @@ export default function Login() {
   };
 
   return (
-    <div>
+    <div className="min-h-screen flex flex-col">
       <Navbar bookingPage={true} />
-      <Card className="container mx-auto max-w-2xl">
-        <CardHeader>
-          <CardTitle className="text-2xl text-center">{t("title")}</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-4">
-            {error && (
-              <Alert variant="destructive">
-                <AlertDescription>
-                  <span className="error-text font-medium">
-                    {error}
-                    {/* @ts-expect-error idk */}
-                    <Link href="/#contact" className="underline font-medium">
-                      {t("contactSupport")}
-                    </Link>
-                  </span>
-                </AlertDescription>
-              </Alert>
-            )}
-            <div className="space-y-2">
-              <label htmlFor="email" className="text-sm font-medium">
-                {t("email")}
-              </label>
-              <Input
-                id="email"
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-            </div>
-            <div className="space-y-2">
-              <label htmlFor="password" className="text-sm font-medium">
-                {t("password")}
-              </label>
-              <Input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-              />
-            </div>
-            <Button type="submit" className="w-full">
-              {t("loginButton")}
-            </Button>
-          </form>
-        </CardContent>
-        <CardFooter className="justify-center">
-          {/* @ts-expect-error idk */}
-          <Link href="/#contact" className="text-sm text-gray-600">
-            {t("contactUs")}
-          </Link>
-        </CardFooter>
-      </Card>
+      <main className="flex-1 flex items-center justify-center py-8">
+        <Card className="container mx-auto max-w-2xl">
+          <CardHeader>
+            <CardTitle className="text-2xl text-center">{t("title")}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              {error && (
+                <Alert variant="destructive">
+                  <AlertDescription>
+                    <span className="error-text font-medium">
+                      {error}
+                      {/* @ts-expect-error idk */}
+                      <Link href="/#contact" className="underline font-medium">
+                        {t("contactSupport")}
+                      </Link>
+                    </span>
+                  </AlertDescription>
+                </Alert>
+              )}
+              <div className="space-y-2">
+                <label htmlFor="email" className="text-sm font-medium">
+                  {t("email")}
+                </label>
+                <Input
+                  id="email"
+                  type="text"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+              </div>
+              <div className="space-y-2">
+                <label htmlFor="password" className="text-sm font-medium">
+                  {t("password")}
+                </label>
+                <Input
+                  id="password"
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  required
+                />
+              </div>
+              <Button type="submit" className="w-full">
+                {t("loginButton")}
+              </Button>
+            </form>
+          </CardContent>
+          <CardFooter className="justify-center">
+            {/* @ts-expect-error idk */}
+            <Link href="/#contact" className="text-sm text-gray-600">
+              {t("contactUs")}
+            </Link>
+          </CardFooter>
+        </Card>
+      </main>
+      <Footer />
     </div>
   );
 }
