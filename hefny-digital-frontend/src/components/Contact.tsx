@@ -135,20 +135,17 @@ export default function Contact() {
           </div>
         </div>
 
-        <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm backdrop-blur-sm shadow-lg flex flex-col justify-between h-full">
+        <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm shadow-lg flex flex-col justify-between h-full">
           <h2 className="text-3xl font-semibold mb-8">{t("dropMessage")}</h2>
-          <form
-            onSubmit={handleSubmit}
-            className="space-y-6 flex flex-col flex-grow"
-          >
-            <div className="grid md:grid-cols-2 gap-6 flex-grow">
+          <form onSubmit={handleSubmit} className="space-y-6 flex flex-col">
+            <div className="grid md:grid-cols-2 gap-6">
               <Input
                 type="text"
                 name="name"
                 placeholder={t("name")}
                 value={formData.name}
                 onChange={handleChange}
-                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-12"
                 required
               />
               <Input
@@ -157,18 +154,18 @@ export default function Contact() {
                 placeholder={t("emailPlaceholder")}
                 value={formData.email}
                 onChange={handleChange}
-                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-12"
                 required
               />
             </div>
-            <div className="grid md:grid-cols-2 gap-6 flex-grow">
+            <div className="grid md:grid-cols-2 gap-6">
               <Input
                 type="tel"
                 name="phone"
                 placeholder={t("phoneNumber")}
                 value={formData.phone}
                 onChange={handleChange}
-                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-12"
                 required
               />
               <Input
@@ -177,7 +174,7 @@ export default function Contact() {
                 placeholder={t("company")}
                 value={formData.company}
                 onChange={handleChange}
-                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-12"
               />
             </div>
             <Textarea
@@ -185,7 +182,7 @@ export default function Contact() {
               placeholder={t("message")}
               value={formData.message}
               onChange={handleChange}
-              className="bg-white border-purple-200 text-black placeholder:text-black-400 flex-grow h-1000"
+              className="bg-white border-purple-200 text-black placeholder:text-black-400 min-h-[200px]"
               required
             />
             <div className="flex items-start gap-2">
