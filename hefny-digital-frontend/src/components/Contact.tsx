@@ -4,16 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import {
-  Facebook,
-  Instagram,
-  Linkedin,
-  Mail,
-  MapPin,
-  Phone,
-  Twitter,
-  Youtube,
-} from "lucide-react";
+import { Linkedin, Mail, MapPin, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
 
@@ -69,19 +60,10 @@ export default function Contact() {
           </div>
 
           <div className="flex gap-4">
-            <SocialIcon href="#">
-              <Youtube className="w-5 h-5" />
+            <SocialIcon href="https://x.com/HefnyDigital">
+              <X className="w-5 h-5" />
             </SocialIcon>
-            <SocialIcon href="#">
-              <Instagram className="w-5 h-5" />
-            </SocialIcon>
-            <SocialIcon href="#">
-              <Facebook className="w-5 h-5" />
-            </SocialIcon>
-            <SocialIcon href="#">
-              <Twitter className="w-5 h-5" />
-            </SocialIcon>
-            <SocialIcon href="#">
+            <SocialIcon href="https://www.linkedin.com/company/hefny-digital-solutions">
               <Linkedin className="w-5 h-5" />
             </SocialIcon>
           </div>
