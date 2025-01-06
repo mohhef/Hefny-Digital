@@ -3,6 +3,15 @@
 import nodemailer from 'nodemailer'
 
 export async function sendEmail(formData: FormData) {
+  console.log('Environment Variables:')
+  console.log('EMAIL_HOST:', process.env.EMAIL_HOST)
+  console.log('EMAIL_PORT:', process.env.EMAIL_PORT)
+  console.log('EMAIL_SECURE:', process.env.EMAIL_SECURE)
+  console.log('EMAIL_USER:', process.env.EMAIL_USER)
+  console.log('EMAIL_PASS:', 'REDACTED') // Don't log the actual password
+  console.log('EMAIL_FROM:', process.env.EMAIL_FROM)
+  console.log('EMAIL_TO:', process.env.EMAIL_TO)
+
   const name = formData.get('name') as string
   const email = formData.get('email') as string
   const phone = formData.get('phone') as string
@@ -19,7 +28,6 @@ export async function sendEmail(formData: FormData) {
     },
   })
 
-  // Email content
   const mailOptions = {
     from: process.env.EMAIL_FROM,
     to: process.env.EMAIL_TO,
@@ -42,10 +50,13 @@ export async function sendEmail(formData: FormData) {
   }
 
   try {
+    console.log('Attempting to send email...')
     await transporter.sendMail(mailOptions)
+    console.log('Email sent successfully')
     return { success: true, message: 'Email sent successfully' }
   } catch (error) {
     console.error('Error sending email:', error)
-    return { success: false, message: 'Failed to send email' }
+    return { success: false, message: 'Failed to send email', error: error.message }
   }
 }
+

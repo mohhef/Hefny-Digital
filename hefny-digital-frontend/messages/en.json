@@ -84,7 +84,8 @@
     "company": "Your company name",
     "message": "How can we help you?*",
     "terms": "*WE DON'T ACCEPT SEO, LINK-BUILDING, OR GUEST POSTING SERVICE OFFERS.",
-    "submit": "Submit Request"
+    "submit": "Submit Request",
+    "sending": "Sending"
   },
   "footer": {
     "nav": {

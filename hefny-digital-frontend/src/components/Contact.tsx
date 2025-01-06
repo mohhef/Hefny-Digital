@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/components/ui/use-toast";
+import { useToast } from "@/hooks/use-toast";
 import { Linkedin, Mail, MapPin, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
@@ -28,12 +28,12 @@ export default function Contact() {
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setIsSubmitting(true);
-
     const formData = new FormData(event.currentTarget);
     const result = await sendEmail(formData);
 
     setIsSubmitting(false);
 
+    console.log(result);
     if (result.success) {
       toast({
         title: "Success",
@@ -41,6 +41,7 @@ export default function Contact() {
       });
       event.currentTarget.reset();
     } else {
+      console.log("hellloooo");
       toast({
         title: "Error",
         description: "Failed to send your message. Please try again later.",
