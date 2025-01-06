@@ -72,25 +72,31 @@
     "viewLinkedIn": "View LinkedIn Profile"
   },
   "contact": {
-    "title": "Contact Us",
-    "getInTouch": "Get In Touch With Us",
-    "ourLocation": "Our Location",
-    "address": "We have branches in Canada, Egypt and UAE - Headquarters: Vancouver, BC",
-    "phoneNumber": "Phone Number",
-    "phone": "+1 (514) 5499903",
-    "emailAddress": "mohhef@gmail.com",
-    "sendMessage": "Send Us a Message",
-    "name": "Name",
+    "title": "Call or Message us",
+    "subtitle": "We're here to support your business growth. Whether you have a quick question or you're ready to start your journey with us, our team is just a call or message away.",
+    "phone": "Phone",
     "email": "Email",
-    "message": "Message",
-    "send": "Send Message"
+    "address": "Registered Address",
+    "dropMessage": "Drop Us a Message",
+    "name": "Your name*",
+    "emailPlaceholder": "Your email*",
+    "phoneNumber": "Phone number*",
+    "company": "Your company name",
+    "message": "How can we help you?*",
+    "terms": "*WE DON'T ACCEPT SEO, LINK-BUILDING, OR GUEST POSTING SERVICE OFFERS.",
+    "submit": "Submit Request"
   },
   "footer": {
     "nav": {
       "services": "Services",
       "portfolio": "Portfolio",
       "about": "About",
-      "contact": "Contact"
+      "contact": "Contact",
+      "company": "Company",
+      "webDevelopment": "Web Development",
+      "seoServices": "SEO Services",
+      "digitalMarketing": "Digital Marketing",
+      "contentCreation": "Content Creation"
     },
     "description": "Creating exceptional digital experiences for businesses worldwide.",
     "quickLinks": "Quick Links",

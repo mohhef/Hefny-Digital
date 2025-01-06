@@ -1,174 +1,208 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Checkbox } from "@/components/ui/checkbox";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import {
+  Facebook,
+  Instagram,
+  Linkedin,
+  Mail,
+  MapPin,
+  Phone,
+  Twitter,
+  Youtube,
+} from "lucide-react";
+import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
-import { useTranslations } from "next-intl";
-import { motion } from "framer-motion";
-import { MapPin, Phone, Mail } from "lucide-react";
 
-const Contact = () => {
+export default function Contact() {
   const t = useTranslations("contact");
+  const locale = useLocale();
+  const isRTL = locale === "ar";
+  const directionClass = isRTL ? "text-right" : "text-left";
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     phone: "",
+    company: "",
     message: "",
   });
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    console.log("Form submitted:", formData);
+  };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
     const { name, value } = e.target;
-    setFormData((prevData) => ({ ...prevData, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    // Here you would typically send the form data to your server or a third-party service
-    console.log("Form submitted:", formData);
-    // Reset form after submission
-    setFormData({ name: "", email: "", phone: "", message: "" });
-  };
+  const SocialIcon = ({
+    href,
+    children,
+  }: {
+    href: string;
+    children: React.ReactNode;
+  }) => (
+    <a
+      href={href}
+      className="bg-white/10 hover:bg-white/20 p-2 rounded-full transition-colors"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      {children}
+    </a>
+  );
 
   return (
-    <section id="contact" className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.h2
-          className="text-4xl font-extrabold text-center mb-12 text-gray-800"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          {t("title")}
-        </motion.h2>
-        <div className="grid md:grid-cols-2 gap-12">
-          <motion.div
-            className="bg-white p-8 rounded-lg shadow-md"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
-          >
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
-              {t("getInTouch")}
-            </h3>
-            <div className="space-y-4">
-              <div className="flex items-start">
-                <MapPin className="w-6 h-6 text-blue-500 mr-4 mt-1" />
-                <div>
-                  <h4 className="font-medium text-gray-800">
-                    {t("ourLocation")}
-                  </h4>
-                  <p className="text-gray-600">{t("address")}</p>
-                </div>
+    <section className="bg-gradient-to-br from-purple-950 to-purple-950 text-white px-4 py-16 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
+        <div className="space-y-12">
+          <div className="space-y-6">
+            <h1 className="text-5xl font-bold leading-tight">{t("title")}</h1>
+            <p className="text-lg text-gray-300">{t("subtitle")}</p>
+          </div>
+
+          <div className="flex gap-4">
+            <SocialIcon href="#">
+              <Youtube className="w-5 h-5" />
+            </SocialIcon>
+            <SocialIcon href="#">
+              <Instagram className="w-5 h-5" />
+            </SocialIcon>
+            <SocialIcon href="#">
+              <Facebook className="w-5 h-5" />
+            </SocialIcon>
+            <SocialIcon href="#">
+              <Twitter className="w-5 h-5" />
+            </SocialIcon>
+            <SocialIcon href="#">
+              <Linkedin className="w-5 h-5" />
+            </SocialIcon>
+          </div>
+
+          <div className="space-y-8">
+            <div className="flex items-start gap-4">
+              <div className="bg-white/10 p-3 rounded-lg">
+                <Phone className="w-6 h-6" />
               </div>
-              <div className="flex items-center">
-                <Phone className="w-6 h-6 text-blue-500 mr-4" />
-                <div>
-                  <h4 className="font-medium text-gray-800">
-                    {t("phoneNumber")}
-                  </h4>
-                  <p className="text-gray-600">{t("phone")}</p>
-                </div>
-              </div>
-              <div className="flex items-center">
-                <Mail className="w-6 h-6 text-blue-500 mr-4" />
-                <div>
-                  <h4 className="font-medium text-gray-800">{t("email")}</h4>
-                  <p className="text-gray-600">{t("emailAddress")}</p>
-                </div>
+              <div>
+                <h3 className="text-xl font-semibold">{t("phone")}</h3>
+                <p className="text-gray-300">Mon - Fri</p>
+                <p dir="ltr" className={directionClass}>
+                  {/* Phone number is always LTR */}
+                  +1 (514) 549 9903
+                </p>
+                <p dir="ltr" className={directionClass}>
+                  {/* Phone number is always LTR */}
+                  +1 514 553 4360
+                </p>
+                <p className="text-gray-300">
+                  9am - 5:30pm GMT / 5am - 1:30pm EST
+                </p>
               </div>
             </div>
-          </motion.div>
-          <motion.div
-            className="bg-white p-8 rounded-lg shadow-md"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.5 }}
+
+            <div className="flex items-start gap-4">
+              <div className="bg-white/10 p-3 rounded-lg">
+                <Mail className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">{t("email")}</h3>
+                <p className="text-gray-300">mohhef@gmail.com</p>
+              </div>
+            </div>
+
+            <div className="flex items-start gap-4">
+              <div className="bg-white/10 p-3 rounded-lg">
+                <MapPin className="w-6 h-6" />
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold">{t("address")}</h3>
+                <p dir="ltr" className={`text-gray-300 ${directionClass}`}>
+                  1445 rue du fort, Montreal, Quebec
+                </p>
+                <p dir="ltr" className={`text-gray-300 ${directionClass}`}>
+                  8668 french street, Vancouver, British Columbia
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white/5 rounded-3xl p-8 backdrop-blur-sm backdrop-blur-sm shadow-lg flex flex-col justify-between h-full">
+          <h2 className="text-3xl font-semibold mb-8">{t("dropMessage")}</h2>
+          <form
+            onSubmit={handleSubmit}
+            className="space-y-6 flex flex-col flex-grow"
           >
-            <h3 className="text-2xl font-semibold mb-6 text-gray-800">
-              {t("sendMessage")}
-            </h3>
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  {t("name")}
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  id="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  {t("email")}
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  {t("phoneNumber")}
-                </label>
-                <input
-                  type="tel"
-                  name="phone"
-                  id="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                />
-              </div>
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-gray-700"
-                >
-                  {t("message")}
-                </label>
-                <textarea
-                  name="message"
-                  id="message"
-                  rows={4}
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500"
-                ></textarea>
-              </div>
-              <div>
-                <button
-                  type="submit"
-                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500"
-                >
-                  {t("send")}
-                </button>
-              </div>
-            </form>
-          </motion.div>
+            <div className="grid md:grid-cols-2 gap-6 flex-grow">
+              <Input
+                type="text"
+                name="name"
+                placeholder={t("name")}
+                value={formData.name}
+                onChange={handleChange}
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+                required
+              />
+              <Input
+                type="email"
+                name="email"
+                placeholder={t("emailPlaceholder")}
+                value={formData.email}
+                onChange={handleChange}
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+                required
+              />
+            </div>
+            <div className="grid md:grid-cols-2 gap-6 flex-grow">
+              <Input
+                type="tel"
+                name="phone"
+                placeholder={t("phoneNumber")}
+                value={formData.phone}
+                onChange={handleChange}
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+                required
+              />
+              <Input
+                type="text"
+                name="company"
+                placeholder={t("company")}
+                value={formData.company}
+                onChange={handleChange}
+                className="bg-white border-purple-200 text-black placeholder:text-black-400 h-full"
+              />
+            </div>
+            <Textarea
+              name="message"
+              placeholder={t("message")}
+              value={formData.message}
+              onChange={handleChange}
+              className="bg-white border-purple-200 text-black placeholder:text-black-400 flex-grow h-1000"
+              required
+            />
+            <div className="flex items-start gap-2">
+              <Checkbox id="terms" className="mt-1 bg-white" />
+              <label htmlFor="terms" className="text-sm text-gray-300">
+                {t("terms")}
+              </label>
+            </div>
+            <Button
+              type="submit"
+              className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 text-lg"
+            >
+              {t("submit")}
+            </Button>
+          </form>
         </div>
       </div>
     </section>
   );
-};
-
-export default Contact;
+}
