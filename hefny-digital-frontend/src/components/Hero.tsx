@@ -62,10 +62,14 @@ const Hero = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <button className="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-50 transition duration-300 transform hover:scale-105">
+            <div className="mt-10">
               {/* @ts-expect-error idk*/}
-              <Link href="/book-strategy-call">{t("cta")}</Link>
-            </button>
+              <Link href="/book-strategy-call"
+                className="inline-block bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg shadow-lg hover:bg-blue-50 transition duration-300 transform hover:scale-105"
+              >
+                {t("cta")}
+              </Link>
+            </div>
           </motion.div>
         </div>
         <motion.div
