@@ -55,7 +55,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="#"
+                  href="/#"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.webDevelopment")}
@@ -63,7 +63,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/#"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.seoServices")}
@@ -71,7 +71,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/#"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.digitalMarketing")}
@@ -79,7 +79,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#"
+                  href="/#"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.contentCreation")}
@@ -94,7 +94,7 @@ const Footer = () => {
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="#about"
+                  href="/#about"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.about")}
@@ -102,7 +102,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#portfolio"
+                  href="/#portfolio"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.portfolio")}
@@ -110,7 +110,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="#contact"
+                  href="/#contact"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.contact")}

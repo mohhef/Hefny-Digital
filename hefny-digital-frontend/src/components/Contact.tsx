@@ -5,10 +5,10 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import { Linkedin, Mail, MapPin, Phone, X } from "lucide-react";
 import { useLocale, useTranslations } from "next-intl";
 import { useState } from "react";
+import { Toaster, toast } from "sonner";
 
 export default function Contact() {
   const t = useTranslations("contact");
@@ -22,7 +22,6 @@ export default function Contact() {
     company: "",
     message: "",
   });
-  const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
@@ -35,18 +34,19 @@ export default function Contact() {
 
     console.log(result);
     if (result.success) {
-      toast({
-        title: "Success",
-        description: "Your message has been sent successfully.",
+      toast.info("Your message has been sent successfully.");
+      setFormData({
+        name: "",
+        email: "",
+        phone: "",
+        company: "",
+        message: "",
       });
+      // Also reset the form fields in the DOM
       event.currentTarget.reset();
     } else {
       console.log("hellloooo");
-      toast({
-        title: "Error",
-        description: "Failed to send your message. Please try again later.",
-        variant: "destructive",
-      });
+      toast.error("Failed to send your message. Please try again later.");
     }
   };
 
@@ -75,7 +75,11 @@ export default function Contact() {
   );
 
   return (
-    <section className="bg-gradient-to-br from-purple-950 to-purple-950 text-white px-4 py-16 sm:px-6 lg:px-8">
+    <section
+      id="contact"
+      className="bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)] text-white px-4 py-16 sm:px-6 lg:px-8"
+    >
+      <Toaster />
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12">
         <div className="space-y-12">
           <div className="space-y-6">

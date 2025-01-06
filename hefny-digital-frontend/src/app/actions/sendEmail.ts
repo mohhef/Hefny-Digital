@@ -54,9 +54,22 @@ export async function sendEmail(formData: FormData) {
     await transporter.sendMail(mailOptions)
     console.log('Email sent successfully')
     return { success: true, message: 'Email sent successfully' }
-  } catch (error) {
+  } catch (error: unknown) {
     console.error('Error sending email:', error)
-    return { success: false, message: 'Failed to send email', error: error.message }
+    
+    if (error instanceof Error) {
+      return { 
+        success: false, 
+        message: 'Failed to send email', 
+        error: error.message 
+      }
+    } else {
+      return { 
+        success: false, 
+        message: 'Failed to send email', 
+        error: 'An unknown error occurred' 
+      }
+    }
   }
 }
 

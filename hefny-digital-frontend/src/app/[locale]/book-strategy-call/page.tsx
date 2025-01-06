@@ -1,5 +1,6 @@
 "use client";
 
+import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { AnimatePresence, motion } from "framer-motion";
 import { useTranslations } from "next-intl";
@@ -53,6 +54,7 @@ export default function ScheduleMeeting() {
           </AnimatePresence>
         </motion.div>
       </div>
+      <Footer />
     </div>
   );
 }
