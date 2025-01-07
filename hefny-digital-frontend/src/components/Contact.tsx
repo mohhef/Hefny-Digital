@@ -203,7 +203,7 @@ export default function Contact() {
             </div>
             <Button
               type="submit"
-              className="w-full bg-purple-600 hover:bg-purple-700 text-white py-6 text-lg"
+              className="w-full text-white py-6 text-lg bg-indigo-600 hover:bg-indigo-700"
               disabled={isSubmitting}
             >
               {isSubmitting ? t("sending") : t("submit")}

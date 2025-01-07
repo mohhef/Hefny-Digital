@@ -1,11 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
-import { Code, Smartphone, Settings, ArrowRight } from "lucide-react";
+import {
+  ArrowRight,
+  DollarSign,
+  Flag,
+  Gauge,
+  LineChart,
+  Maximize2,
+  Smartphone,
+} from "lucide-react";
+import { useTranslations } from "next-intl";
+import { useState } from "react";
 import Modal from "./Modal";
-
 const Services = () => {
   const t = useTranslations("services");
   const [hoveredService, setHoveredService] = useState<number | null>(null);
@@ -13,31 +20,64 @@ const Services = () => {
 
   const services = [
     {
-      title: t("webDev.title"),
-      description: t("webDev.description"),
-      detailedDescription: t("webDev.detailedDescription"),
-      icon: Code,
+      icon: <Smartphone className="w-8 h-8 text-white" />,
+      title: "MOBILE FIRST DESIGN",
+      description:
+        "We start building your site for mobile devices first making sure the code is as lean and optimized with no bloated waste and makes the site even more responsive.",
+      link: "Get Started",
       color: "bg-blue-100",
-      iconColor: "text-blue-600",
-      hoverColor: "bg-blue-200",
+      iconColor: "text-grey-600",
+      hoverColor: "bg-grey-200",
     },
     {
-      title: t("mobileDev.title"),
-      description: t("mobileDev.description"),
-      detailedDescription: t("mobileDev.detailedDescription"),
-      icon: Smartphone,
-      color: "bg-green-100",
-      iconColor: "text-green-600",
-      hoverColor: "bg-green-200",
+      icon: <Maximize2 className="w-8 h-8 text-white" />,
+      title: "FULLY RESPONSIVE",
+      description:
+        "Your website will fit all mobile screens sizes, tablets, and desktop sizes so visitors can access your site from anywhere and see a beautiful site no matter the screen size.",
+      link: "Get Started",
+      color: "bg-indigo-100",
+      iconColor: "text-grey-600",
+      hoverColor: "bg-grey-200",
     },
     {
-      title: t("endToEnd.title"),
-      description: t("endToEnd.description"),
-      detailedDescription: t("endToEnd.detailedDescription"),
-      icon: Settings,
-      color: "bg-purple-100",
-      iconColor: "text-purple-600",
-      hoverColor: "bg-purple-200",
+      icon: <Gauge className="w-8 h-8 text-white" />,
+      title: "OPTIMIZED PAGE SPEED",
+      description:
+        "If your site takes more than 3 seconds to load you can lose up to 50% your traffic because it took too long. Our sites load 1 second or less ensuring everyone that visits your site reaches it.",
+      link: "More About Page Speed",
+      color: "bg-blue-100",
+      iconColor: "text-grey-600",
+      hoverColor: "bg-grey-200",
+    },
+    {
+      icon: <LineChart className="w-8 h-8 text-white" />,
+      title: "SEO SERVICES",
+      description:
+        "We have an in-house SEO specialist who understands local SEO and how to rank in your local market with plenty of case studies to show results and monthly reports.",
+      link: "More About SEO",
+      color: "bg-indigo-100",
+      iconColor: "text-grey-600",
+      hoverColor: "bg-grey-200",
+    },
+    {
+      icon: <DollarSign className="w-8 h-8 text-white" />,
+      title: "GOOGLE PPC ADS",
+      description:
+        "We also offer Pay-Per-Click Google ads creation and management with our Google Ads expert who can create effective ad campaigns to maximize your ROI.",
+      link: "More About Ads",
+      color: "bg-blue-100",
+      iconColor: "text-grey-600",
+      hoverColor: "bg-grey-200",
+    },
+    {
+      icon: <Flag className="w-8 h-8 text-white" />,
+      title: "BASED ACROSS THREE COUNTRIES",
+      description:
+        "We are mostly based in Canada, UAE and Egypt. We have developers working around the clock.",
+      link: "More About Us",
+      color: "bg-indigo-100",
+      iconColor: "text-grey-600",
+      hoverColor: "bg-grey-200",
     },
   ];
 
@@ -72,9 +112,9 @@ const Services = () => {
                       : service.color,
                 }}
               >
-                <service.icon
-                  className={`h-12 w-12 ${service.iconColor} mb-4`}
-                />
+                <div className="bg-[#001f3f] w-16 h-16 rounded-lg flex items-center justify-center mb-6">
+                  {service.icon}
+                </div>
                 <h3 className="text-xl font-semibold text-gray-800 mb-2">
                   {service.title}
                 </h3>
@@ -113,9 +153,7 @@ const Services = () => {
         onClose={() => setSelectedService(null)}
         title={selectedService !== null ? services[selectedService].title : ""}
         content={
-          selectedService !== null
-            ? services[selectedService].detailedDescription
-            : ""
+          selectedService !== null ? services[selectedService].description : ""
         }
       />
     </section>

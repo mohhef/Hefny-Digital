@@ -16,8 +16,8 @@ export default function ScheduleMeeting() {
   };
 
   return (
-    <div>
-      <Navbar bookingPage={true} />
+    <div className="min-h-screen flex flex-col bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
+      <Navbar />
       <div className="container mx-auto p-4 max-w-5xl">
         <motion.h1
           className="text-4xl font-bold mb-8 text-center text-primary"

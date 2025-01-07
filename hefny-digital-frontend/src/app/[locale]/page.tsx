@@ -1,10 +1,9 @@
-import Navbar from "../../components/Navbar";
-import Hero from "../../components/Hero";
-import Services from "../../components/Services";
-import Portfolio from "../../components/Portfolio";
-import About from "../../components/About";
-import Contact from "../../components/Contact";
+import Features from "../../components/Features";
 import Footer from "../../components/Footer";
+import Hero from "../../components/Hero";
+import Navbar from "../../components/Navbar";
+import Portfolio from "../../components/Portfolio";
+import Services from "../../components/Services";
 
 export default async function Home({}: {
   params: Promise<{ locale: string }>;
@@ -15,9 +14,8 @@ export default async function Home({}: {
       <main>
         <Hero />
         <Services />
+        <Features />
         <Portfolio />
-        <About />
-        <Contact />
       </main>
       <Footer />
     </div>

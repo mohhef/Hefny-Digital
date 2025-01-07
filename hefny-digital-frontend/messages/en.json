@@ -5,11 +5,12 @@
     "portfolio": "Portfolio",
     "about": "About",
     "contact": "Contact",
-    "bookFreeCall": "Book Free Strategy Call"
+    "bookFreeCall": "Book Free Strategy Call",
+    "pricing": "Pricing"
   },
   "hero": {
     "title": "Hefny Digital Solutions",
-    "description": "We create stunning websites and deliver end-to-end digital solutions—from SEO and marketing to maintenance—empowering your business to thrive online.",
+    "description": "No page builders or WordPress. We offer 100% hand-coded websites with superior results starting at $175/mo as well as Google Ads and SEO services.",
     "cta": "Get Started"
   },
   "services": {

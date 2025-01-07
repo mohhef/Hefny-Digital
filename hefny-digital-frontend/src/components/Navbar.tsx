@@ -56,21 +56,28 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                   {t("services")}
                 </NavLink>
                 <NavLink
-                  href="#portfolio"
+                  href="/#portfolio"
                   isScrolled={isScrolled}
                   bookingPage={bookingPage}
                 >
                   {t("portfolio")}
                 </NavLink>
                 <NavLink
-                  href="#about"
+                  href="/about"
                   isScrolled={isScrolled}
                   bookingPage={bookingPage}
                 >
                   {t("about")}
                 </NavLink>
                 <NavLink
-                  href="#contact"
+                  href="/pricing"
+                  isScrolled={isScrolled}
+                  bookingPage={bookingPage}
+                >
+                  {t("pricing")}
+                </NavLink>
+                <NavLink
+                  href="/contact"
                   isScrolled={isScrolled}
                   bookingPage={bookingPage}
                 >
@@ -128,8 +135,9 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 <MobileNavLink href="#portfolio">
                   {t("portfolio")}
                 </MobileNavLink>
-                <MobileNavLink href="#about">{t("about")}</MobileNavLink>
-                <MobileNavLink href="#contact">{t("contact")}</MobileNavLink>
+                <MobileNavLink href="/about">{t("about")}</MobileNavLink>
+                <MobileNavLink href="/pricing ">{t("pricing")}</MobileNavLink>
+                <MobileNavLink href="/contact">{t("contact")}</MobileNavLink>
               </div>
             )}
             {!bookingPage && (

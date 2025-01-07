@@ -1,8 +1,8 @@
 "use client";
 
-import { useTranslations } from "next-intl";
 import { motion } from "framer-motion";
 import { Linkedin } from "lucide-react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const About = () => {
@@ -26,10 +26,13 @@ const About = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gray-100">
+    <section
+      id="about"
+      className="py-20 bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.h2
-          className="text-4xl font-extrabold text-center mb-12 text-gray-800"
+          className="text-4xl font-extrabold text-center mb-12 text-white"
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -37,7 +40,7 @@ const About = () => {
           {t("title")}
         </motion.h2>
         <div className="mb-16">
-          <p className="text-xl text-gray-600 text-center mb-8">
+          <p className="text-xl text-white text-center mb-8">
             {t("description")}
           </p>
         </div>
