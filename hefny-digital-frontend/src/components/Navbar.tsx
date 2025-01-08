@@ -140,7 +140,7 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 asChild
                 className="border-white hover:bg-white hover:text-gray-300"
               >
-               {/* @ts-expect-error idk */} 
+                {/* @ts-expect-error idk */}
                 <Link href={"/login"}>{t("login")}</Link>
               </Button>
             )}
@@ -168,8 +168,8 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
           <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
             {!bookingPage && (
               <div>
-                <MobileNavLink href="#services">{t("services")}</MobileNavLink>
-                <MobileNavLink href="#portfolio">
+                <MobileNavLink href="/#services">{t("services")}</MobileNavLink>
+                <MobileNavLink href="/#portfolio">
                   {t("portfolio")}
                 </MobileNavLink>
                 <MobileNavLink href="/about">{t("about")}</MobileNavLink>

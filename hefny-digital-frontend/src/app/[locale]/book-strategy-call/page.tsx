@@ -18,7 +18,7 @@ export default function ScheduleMeeting() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
       <Navbar />
-      <div className="container mx-auto py-16 max-w-5xl">
+      <div className="container mx-auto py-16 max-w-5xl px-5">
         <motion.div
           className="bg-white shadow-xl rounded-lg p-6"
           initial="hidden"

@@ -12,9 +12,9 @@ export default function AboutPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
       <Navbar />
-      <section className="py-16 md:py-24 bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
+      <section className="py-16 px-10 md:py-16 bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
+        <div className="container mx-auto px-4 py-5">
+          <div className="flex lg:flex-row items-center lg:items-start gap-12">
             {/* Left Column - Text Content */}
             <div className="lg:w-2/3 space-y-8">
               <div className="space-y-4">
@@ -40,7 +40,8 @@ export default function AboutPage() {
 
               <div className="pt-4">
                 {/* @ts-expect-error idk */}
-                <Link href="/book-strategy-call"
+                <Link
+                  href="/book-strategy-call"
                   className="inline-block px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-md shadow-lg hover:bg-blue-700 transition-colors duration-200 hover:shadow-xl"
                 >
                   {t("ctaButton")}

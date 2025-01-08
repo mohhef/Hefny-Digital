@@ -5,7 +5,7 @@ export default function ContactUs() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
       <Navbar />
-      <main className="flex-1 bg-gradient-to-b from-background to-background/95">
+      <main className="flex-1 bg-gradient-to-b from-background to-background/95 py-5">
         <Contact />
       </main>
       <Footer />
