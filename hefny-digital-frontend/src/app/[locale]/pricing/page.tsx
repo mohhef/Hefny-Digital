@@ -11,17 +11,8 @@ import { Check, X } from "lucide-react";
 
 export default function PricingPage() {
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
       <Navbar />
-      {/* Hero Section with Curve */}
-      <section className="relative bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)] text-white">
-        <div className="container mx-auto px-4 py-40 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-            PRICING
-          </h1>
-        </div>
-      </section>
-
       {/* Pricing Section */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4">
@@ -29,7 +20,7 @@ export default function PricingPage() {
             <h2 className="text-sm font-semibold tracking-widest text-black-600 uppercase mb-4">
               OUR PRICING
             </h2>
-            <h3 className="text-4xl md:text-5xl font-bold">
+            <h3 className="text-4xl md:text-5xl font-bold text-white">
               PRICING PACKAGES FOR EVERY BUDGET
             </h3>
           </div>

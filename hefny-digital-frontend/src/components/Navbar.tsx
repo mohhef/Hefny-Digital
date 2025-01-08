@@ -140,7 +140,7 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 asChild
                 className="border-white hover:bg-white hover:text-gray-300"
               >
-                {/* @ts-expect-error idk */}
+               {/* @ts-expect-error idk */} 
                 <Link href={"/login"}>{t("login")}</Link>
               </Button>
             )}

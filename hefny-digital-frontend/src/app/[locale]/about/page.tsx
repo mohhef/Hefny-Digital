@@ -10,15 +10,8 @@ export default function AboutPage() {
   const t = useTranslations("aboutPage");
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
       <Navbar />
-      <section className="relative bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)] text-white">
-        <div className="container mx-auto px-4 py-40 pb-20 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold tracking-tight">
-            {t("title")}
-          </h1>
-        </div>
-      </section>
       <section className="py-16 md:py-24 bg-gradient-to-br from-[rgb(12,7,40)] to-[rgb(12,7,40)]">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center lg:items-start gap-12">
