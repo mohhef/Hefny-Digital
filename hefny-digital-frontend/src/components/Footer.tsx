@@ -88,13 +88,12 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Company Column */}
           <div>
             <h3 className="text-xl font-semibold mb-6">{t("nav.company")}</h3>
             <ul className="space-y-4">
               <li>
                 <Link
-                  href="/#about"
+                  href="/about"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.about")}
@@ -110,10 +109,18 @@ const Footer = () => {
               </li>
               <li>
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className="text-gray-300 hover:text-white transition-colors"
                 >
                   {t("nav.contact")}
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/pricing"
+                  className="text-gray-300 hover:text-white transition-colors"
+                >
+                  {t("nav.pricing")}
                 </Link>
               </li>
             </ul>

@@ -99,14 +99,16 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 <Link href="/book-strategy-call">{t("bookFreeCall")}</Link>
               </Button>
             )}
-            <Button
-              variant="outline"
-              asChild
-              className="border-white hover:bg-white hover:text-gray-300"
-            >
-              {/* @ts-expect-error idk */}
-              <Link href={"/login"}>{t("login")}</Link>
-            </Button>
+            {!bookingPage && (
+              <Button
+                variant="outline"
+                asChild
+                className="border-white hover:bg-white hover:text-gray-300"
+              >
+                {/* @ts-expect-error idk */}
+                <Link href={"/login"}>{t("login")}</Link>
+              </Button>
+            )}
             {!bookingPage && <LanguageSwitcher />}
           </div>
           <div className="md:hidden flex items-center">
@@ -150,13 +152,15 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
                 </MobileNavLink>
               </Button>
             )}
-            <Button
-              variant="outline"
-              asChild
-              className="w-full border-white hover:bg-white hover:text-gray-800"
-            >
-              <MobileNavLink href="/login">Login</MobileNavLink>
-            </Button>
+            {!bookingPage && (
+              <Button
+                variant="outline"
+                asChild
+                className="w-full border-white hover:bg-white hover:text-gray-800"
+              >
+                <MobileNavLink href="/login">Login</MobileNavLink>
+              </Button>
+            )}
           </div>
           {!bookingPage && (
             <div className="px-4 py-3 border-t border-gray-200">

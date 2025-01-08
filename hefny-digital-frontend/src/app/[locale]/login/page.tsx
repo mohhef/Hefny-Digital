@@ -64,7 +64,7 @@ export default function Login() {
                     <span className="error-text font-medium">
                       {error}
                       {/* @ts-expect-error idk */}
-                      <Link href="/#contact" className="underline font-medium">
+                      <Link href="/contact" className="underline font-medium">
                         {t("contactSupport")}
                       </Link>
                     </span>
@@ -102,7 +102,7 @@ export default function Login() {
           </CardContent>
           <CardFooter className="justify-center">
             {/* @ts-expect-error idk */}
-            <Link href="/#contact" className="text-sm text-gray-600">
+            <Link href="/contact" className="text-sm text-gray-600">
               {t("contactUs")}
             </Link>
           </CardFooter>
