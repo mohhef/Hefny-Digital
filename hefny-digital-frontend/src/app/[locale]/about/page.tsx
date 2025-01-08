@@ -40,8 +40,7 @@ export default function AboutPage() {
 
               <div className="pt-4">
                 {/* @ts-expect-error idk */}
-                <Link
-                  href="/book-strategy-call"
+                <Link href="/book-strategy-call"
                   className="inline-block px-8 py-4 text-lg font-semibold text-white bg-blue-600 rounded-md shadow-lg hover:bg-blue-700 transition-colors duration-200 hover:shadow-xl"
                 >
                   {t("ctaButton")}
