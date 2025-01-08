@@ -30,3 +30,17 @@ body {
 .highlight-error-text {
   animation: pulseError 0.2s ease-in-out 2;
 }
+.filter-purple-bold {
+  filter: brightness(0) saturate(100%) invert(9%) sepia(83%) saturate(6042%) hue-rotate(275deg) brightness(97%) contrast(109%);
+}
+
+.logo-light {
+  filter: brightness(0) invert(1);
+  mix-blend-mode: difference;
+}
+
+.logo-dark {
+  filter: brightness(0) saturate(100%);
+  mix-blend-mode: multiply;
+}
+

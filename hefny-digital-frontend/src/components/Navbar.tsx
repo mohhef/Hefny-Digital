@@ -4,13 +4,16 @@ import { Button } from "@/components/ui/button";
 import { Link } from "@/i18n/routing";
 import { Menu, X } from "lucide-react";
 import { useTranslations } from "next-intl";
-import { useEffect, useState } from "react";
+import Image from "next/image";
+import { useEffect, useRef, useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
 
 const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const t = useTranslations("nav");
+  const [isDarkBackground, setIsDarkBackground] = useState(true);
+  const logoRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -18,6 +21,33 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const checkBackgroundColor = () => {
+      if (logoRef.current) {
+        const rect = logoRef.current.getBoundingClientRect();
+        const x = rect.left + rect.width / 2;
+        const y = rect.top + rect.height / 2;
+        const element = document.elementFromPoint(x, y);
+        if (element) {
+          const bgColor = window.getComputedStyle(element).backgroundColor;
+          const rgb = bgColor.match(/\d+/g);
+          if (rgb) {
+            const brightness =
+              (parseInt(rgb[0]) * 299 +
+                parseInt(rgb[1]) * 587 +
+                parseInt(rgb[2]) * 114) /
+              1000;
+            setIsDarkBackground(brightness < 128);
+          }
+        }
+      }
+    };
+
+    checkBackgroundColor();
+    window.addEventListener("scroll", checkBackgroundColor);
+    return () => window.removeEventListener("scroll", checkBackgroundColor);
   }, []);
 
   return (
@@ -35,21 +65,26 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
-            <Link href={"/home"} className="flex items-center">
-              <span
-                className={`text-xl font-bold ${
-                  isScrolled || bookingPage ? "text-blue-600" : "text-white"
-                } transition-colors duration-300`}
-              >
-                HDS
-              </span>
+            <Link href="/home" className="flex items-center">
+              <div ref={logoRef} className="relative w-[120px] h-[120px]">
+                <Image
+                  src="/HDSLogo.svg"
+                  alt="HDS Logo"
+                  layout="fill"
+                  className={`transition-all duration-300 ${
+                    isDarkBackground && !bookingPage
+                      ? "logo-light"
+                      : "logo-dark"
+                  }`}
+                />
+              </div>
             </Link>
           </div>
           <div className="hidden md:flex md:items-center md:space-x-2">
             {!bookingPage && (
               <div>
                 <NavLink
-                  href="#services"
+                  href="/#services"
                   isScrolled={isScrolled}
                   bookingPage={bookingPage}
                 >
