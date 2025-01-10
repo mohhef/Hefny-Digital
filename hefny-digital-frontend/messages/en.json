@@ -255,6 +255,43 @@
   "bookingCalendar": {
     "scheduleFreeConsultation": "Schedule Your Free Consultation",
     "selectDateAndTime": "Select a Date and Time"
+  },
+  "pricing": {
+    "title": "OUR PRICING",
+    "subtitle": "PRICING PACKAGES FOR EVERY BUDGET",
+    "lumpSum": {
+      "title": "LUMP SUM",
+      "price": "$3800",
+      "hosting": "+$25/mo Hosting"
+    },
+    "monthly": {
+      "title": "MONTHLY",
+      "price": "$175",
+      "perMonth": "Per Month"
+    },
+    "ecommerce": {
+      "title": "ECOMMERCE",
+      "price": "$8k",
+      "starting": "Starting"
+    },
+    "getStarted": "GET STARTED",
+    "features": {
+      "designAndDevelopment": "Design And Development",
+      "hosting": "$25/mo Hosting",
+      "additionalPageFee": "$100 fee Per Page after 5",
+      "unlimitedEditsAddon": "+$50/mo Unlimited Edits Add-on",
+      "addBlog": "+$250 To Add A Blog",
+      "support": "24/7 Support",
+      "lifetimeUpdates": "Lifetime Updates",
+      "includesHosting": "Includes Hosting",
+      "unlimitedEdits": "Unlimited Edits",
+      "customShopify": "Custom Shopify Store",
+      "configureApps": "Configure Any And All Apps",
+      "integratedShipping": "Integrated Shipping",
+      "shopifyTutorial": "Shopify Tutorial Walkthrough",
+      "fullyEditable": "Fully Editable In Shopify CMS",
+      "unlimitedEditsMonthly": "+$50/mo Unlimited Edits"
+    }
   }
 }
 

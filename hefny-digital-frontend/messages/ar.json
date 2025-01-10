@@ -237,5 +237,42 @@
   "bookingCalendar": {
     "scheduleFreeConsultation": "حدد موعدًا لاستشارتك المجانية",
     "selectDateAndTime": "حدد التاريخ والوقت"
+  },
+  "pricing": {
+    "title": "أسعارنا",
+    "subtitle": "باقات الأسعار لكل ميزانية",
+    "lumpSum": {
+      "title": "المبلغ الإجمالي",
+      "price": "$3800",
+      "hosting": "+25 دولار/شهر للاستضافة"
+    },
+    "monthly": {
+      "title": "شهري",
+      "price": "$175",
+      "perMonth": "في الشهر"
+    },
+    "ecommerce": {
+      "title": "التجارة الإلكترونية",
+      "price": "$8k",
+      "starting": "ابتداءً من"
+    },
+    "getStarted": "ابدأ الآن",
+    "features": {
+      "designAndDevelopment": "التصميم والتطوير",
+      "hosting": "25 دولار/شهر للاستضافة",
+      "additionalPageFee": "رسوم 100 دولار لكل صفحة إضافية بعد 5 صفحات",
+      "unlimitedEditsAddon": "+50 دولار/شهر للتعديلات غير المحدودة",
+      "addBlog": "+250 دولار لإضافة مدونة",
+      "support": "دعم على مدار الساعة",
+      "lifetimeUpdates": "تحديثات مدى الحياة",
+      "includesHosting": "يشمل الاستضافة",
+      "unlimitedEdits": "تعديلات غير محدودة",
+      "customShopify": "متجر Shopify مخصص",
+      "configureApps": "تكوين أي وجميع التطبيقات",
+      "integratedShipping": "شحن متكامل",
+      "shopifyTutorial": "دليل تعليمي لـ Shopify",
+      "fullyEditable": "قابل للتحرير بالكامل في نظام إدارة المحتوى Shopify",
+      "unlimitedEditsMonthly": "+50 دولار/شهر للتعديلات غير المحدودة"
+    }
   }
 }
