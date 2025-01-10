@@ -68,7 +68,7 @@ const Navbar = ({ bookingPage = false }: { bookingPage?: boolean }) => {
             <Link href="/home" className="flex items-center">
               <div ref={logoRef} className="relative w-[120px] h-[120px]">
                 <Image
-                  src="/HDSLogo.svg"
+                  src="/HDS.svg"
                   alt="HDS Logo"
                   layout="fill"
                   className={`transition-all duration-300 ${
